@@ -1,0 +1,436 @@
+@font-face {
+  font-family: NotoSansThin;
+  src: url(../assets/fonts/NotoSansJP-Thin.otf);
+}
+
+@font-face {
+  font-family: NotoSansLight;
+  src: url(../assets/fonts/NotoSansJP-Light.otf);
+}
+
+@font-face {
+  font-family: NotoSansRegular;
+  src: url(../assets/fonts/NotoSansJP-Regular.otf);
+}
+
+@font-face {
+  font-family: NotoSansMedium;
+  src: url(../assets/fonts/NotoSansJP-Medium.otf);
+}
+
+@font-face {
+  font-family: NotoSansBold;
+  src: url(../assets/fonts/NotoSansJP-Bold.otf);
+}
+
+@font-face {
+  font-family: NotoSansBlack;
+  src: url(../assets/fonts/NotoSansJP-Black.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-image: url("../assets/bird-bg-img.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(15, 26, 47, 0.9);
+  max-width: 924px;
+  height: 46%;
+}
+
+body main .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 140px;
+  height: 50px;
+  font-family: NotoSansRegular;
+  font-size: 12px;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+
+body main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 82%;
+  margin: 0 auto;
+  font-size: 19px;
+  color: #fff;
+}
+
+body main .container .sign-up-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+body main .container .sign-up-block h2,
+body main .container .sign-up-block p {
+  max-width: calc(72% - 2px);
+}
+
+body main .container .login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 50%;
+}
+
+body main .container .login-container .login-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+body main .container h2,
+body main .container p {
+  color: #fff;
+}
+
+body main .container p {
+  font-family: NotoSansRegular;
+  font-size: 0.9rem;
+  line-height: 32px;
+}
+
+body main .container .button {
+  border: 2px solid #49abfe;
+}
+
+body main .container .button:hover {
+  background-color: #49abfe;
+}
+
+body main .container .dimension-border {
+  position: absolute;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 421px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+body main .container .triangle {
+  position: absolute;
+  z-index: -2;
+  left: 4px;
+  height: 23px;
+  width: 10px;
+  background-color: #89deff;
+}
+
+body main .container .solid-border {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 9px;
+  background-color: #20293a;
+}
+
+body main .container .top-triangle {
+  top: -20px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+body main .container .bottom-triangle {
+  bottom: -20px;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+body main .transformer-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: -20px;
+  right: 20px;
+  height: calc(100% + 40px);
+  width: 473px;
+}
+
+body main .transformer-container .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: 0 0 2px #cfcfcf;
+          box-shadow: 0 0 2px #cfcfcf;
+}
+
+body main .transformer-container .form-container .inner-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 61%;
+  width: 60%;
+  margin-top: 79px;
+}
+
+body main .transformer-container .form-container .inner-form-container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+body main .transformer-container .form-container .inner-form-container header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body main .transformer-container .form-container .inner-form-container header div img {
+  height: 100%;
+  width: auto;
+}
+
+body main .transformer-container .form-container h2 {
+  color: #3e495e;
+}
+
+body main .transformer-container .form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+body main .transformer-container .form-container form .name-input-container {
+  display: none;
+}
+
+body main .transformer-container .form-container form .name-input-container,
+body main .transformer-container .form-container form .email-input-container,
+body main .transformer-container .form-container form .password-input-container {
+  margin-bottom: 25px;
+}
+
+body main .transformer-container .form-container form div {
+  width: 100%;
+}
+
+body main .transformer-container .form-container form .input-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+body main .transformer-container .form-container form .input-container span {
+  color: #f44368;
+  font-size: 14px;
+}
+
+body main .transformer-container .form-container form .input-container img {
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  height: auto;
+  width: 16px;
+}
+
+body main .transformer-container .form-container form input {
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #cbd2df;
+  width: 100%;
+  height: 25px;
+}
+
+body main .transformer-container .form-container form input:focus {
+  outline: none;
+  padding-bottom: 5px;
+}
+
+body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+          box-shadow: 0 0 0px 1000px white inset;
+}
+
+body main .transformer-container .form-container form .main-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 8px;
+}
+
+body main .transformer-container .form-container form .main-button-container .button {
+  background-color: #f89a35;
+  border: none;
+}
+
+body main .transformer-container .form-container form .main-button-container .button:focus {
+  outline: none;
+}
+
+body main .transformer-container .form-container form .main-button-container .button:hover {
+  background-color: #f8bf35;
+}
+
+body main .transformer-container .form-container form label,
+body main .transformer-container .form-container form p {
+  margin: 0px;
+  font-family: NotoSansRegular;
+  font-size: 14px;
+  color: #8495b7;
+}
+
+body main .transformer-container .form-container form input {
+  margin: 0px;
+  font-family: NotoSansMedium;
+  font-size: 14px;
+  color: #3e495e;
+}
+
+body main h2,
+body main span,
+body main p,
+body main input {
+  margin-bottom: 22px;
+}
+
+body main h2 {
+  font-family: NotoSansThin;
+  font-size: 26px;
+}
+
+body main .under-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #49abfe;
+}
+
+body footer {
+  position: absolute;
+  bottom: 50px;
+  color: #a7b3cb;
+  font-family: NotoSansBlack;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=style.css.map */

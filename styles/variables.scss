@@ -1,0 +1,54 @@
+///////////////////////////////////
+//  Background and Border Colors //
+///////////////////////////////////
+$base-bg-clr: rgba(15, 26, 47, 0.9);
+$front-bg-clr: #fff;
+$accent-clr: #49abfe;
+$primary-btn-clr: #f89a35;
+$primary-btn-clr-hover: #f8bf35;
+$required-star-clr: #f44368;
+$input-border-clr: #cbd2df;
+$dimension-border-clr: #20293a;
+$dimension-triangle-clr: #89deff;
+
+///////////////////
+//  Text Colors //
+//////////////////
+$base-txt-clr: #fff;
+$front-h2-clr: #3e495e;
+$label-txt-clr: #8495b7;
+$input-txt-clr: #3e495e;
+$footer-txt-clr: #a7b3cb;
+
+///////////////////
+// Font-families //
+///////////////////
+@font-face {
+	font-family: NotoSansThin;
+	src: url(../assets/fonts/NotoSansJP-Thin.otf);
+}
+
+@font-face {
+	font-family: NotoSansLight;
+	src: url(../assets/fonts/NotoSansJP-Light.otf);
+}
+
+@font-face {
+	font-family: NotoSansRegular;
+	src: url(../assets/fonts/NotoSansJP-Regular.otf);
+}
+
+@font-face {
+	font-family: NotoSansMedium;
+	src: url(../assets/fonts/NotoSansJP-Medium.otf);
+}
+
+@font-face {
+	font-family: NotoSansBold;
+	src: url(../assets/fonts/NotoSansJP-Bold.otf);
+}
+
+@font-face {
+	font-family: NotoSansBlack;
+	src: url(../assets/fonts/NotoSansJP-Black.otf);
+}
