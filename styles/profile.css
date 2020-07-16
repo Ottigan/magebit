@@ -1,0 +1,291 @@
+@font-face {
+  font-family: NotoSansThin;
+  src: url(../assets/fonts/NotoSansJP-Thin.otf);
+}
+
+@font-face {
+  font-family: NotoSansRegular;
+  src: url(../assets/fonts/NotoSansJP-Regular.otf);
+}
+
+@font-face {
+  font-family: NotoSansMedium;
+  src: url(../assets/fonts/NotoSansJP-Medium.otf);
+}
+
+@font-face {
+  font-family: NotoSansBlack;
+  src: url(../assets/fonts/NotoSansJP-Black.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-image: url("../assets/bird-bg-img.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+header form p {
+  margin-right: 10px;
+  font-family: NotoSansMedium;
+  font-size: 16px;
+  line-height: 1;
+}
+
+header form .button {
+  width: 60px;
+  height: 30px;
+  font-family: NotoSansRegular;
+  font-size: 12px;
+  border-radius: 3px;
+  border: none;
+  background-color: #f89a35;
+  color: #fff;
+  cursor: pointer;
+}
+
+header form .button:focus {
+  outline: none;
+}
+
+header form .button:hover {
+  background-color: #f8bf35;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 70%;
+  width: 900px;
+}
+
+.dark-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+  background-color: rgba(15, 26, 47, 0.9);
+}
+
+.add-attribute-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100px;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.add-attribute-form span {
+  margin: 20px;
+  width: 100%;
+}
+
+.add-attribute-form span label {
+  margin: 0px;
+  font-family: NotoSansRegular;
+  font-size: 14px;
+  color: #8495b7;
+}
+
+.add-attribute-form span input {
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid #cbd2df;
+  height: 25px;
+  width: 100%;
+}
+
+.add-attribute-form span input:focus {
+  outline: none;
+  padding-bottom: 5px;
+}
+
+.add-attribute-form span input:-webkit-autofill, .add-attribute-form span input:-webkit-autofill:hover, .add-attribute-form span input:-webkit-autofill:focus, .add-attribute-form span input:-webkit-autofill, .add-attribute-form span input:-webkit-autofill:hover, .add-attribute-form span input:-webkit-autofill:focus, .add-attribute-form span input:-webkit-autofill, .add-attribute-form span input:-webkit-autofill:hover, .add-attribute-form span input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+          box-shadow: 0 0 0px 1000px white inset;
+}
+
+.add-attribute-form .button {
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  font-family: NotoSansRegular;
+  font-size: 12px;
+  border-radius: 3px;
+  border: none;
+  background-color: #f89a35;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-attribute-form .button:focus {
+  outline: none;
+}
+
+.add-attribute-form .button:hover {
+  background-color: #f8bf35;
+}
+
+table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+table thead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+table thead tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+table thead tr th {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  width: auto;
+  border-bottom: 1px solid #cbd2df;
+}
+
+table tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+table tbody tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+table tbody tr td {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  text-indent: 5px;
+  border: 1px solid black;
+}
+
+table tbody tr td:nth-child(2) {
+  margin: 0 2px;
+}
+
+table tbody tr td:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+table tbody tr td a {
+  width: 100%;
+  padding-top: 2px;
+  font-size: 12px;
+  text-align: center;
+  font-family: NotoSansMedium;
+  line-height: 1;
+  border: 1px solid black;
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 50px;
+  color: #a7b3cb;
+  font-family: NotoSansBlack;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+/*# sourceMappingURL=profile.css.map */

@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: NotoSansLight;
-  src: url(../assets/fonts/NotoSansJP-Light.otf);
-}
-
-@font-face {
   font-family: NotoSansRegular;
   src: url(../assets/fonts/NotoSansJP-Regular.otf);
 }
@@ -16,11 +11,6 @@
 @font-face {
   font-family: NotoSansMedium;
   src: url(../assets/fonts/NotoSansJP-Medium.otf);
-}
-
-@font-face {
-  font-family: NotoSansBold;
-  src: url(../assets/fonts/NotoSansJP-Bold.otf);
 }
 
 @font-face {

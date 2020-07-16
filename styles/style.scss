@@ -105,7 +105,7 @@ body {
 			.triangle {
 				position: absolute;
 				z-index: -2;
-				left: 4px;
+				left: 5px;
 				height: 23px;
 				width: 10px;
 				background-color: $dimension-triangle-clr;
@@ -176,6 +176,18 @@ body {
 
 				h2 {
 					color: $front-h2-clr;
+				}
+
+				.error-msg {
+					font-family: NotoSansMedium;
+					font-size: 14px;
+					color: $error-txt-clr;
+				}
+
+				.success-msg {
+					font-family: NotoSansMedium;
+					font-size: 14px;
+					color: $success-txt-clr;
 				}
 
 				form {

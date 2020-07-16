@@ -11,7 +11,7 @@ if (isset($_POST['login-btn'])) {
         exit();
     } else {
         $stmt = mysqli_stmt_init($conn);
-        $sql = 'SELECT * FROM users WHERE emailUsers=?';
+        $sql = 'SELECT * FROM users WHERE emailUsers = ?';
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header('location: ../index.php?error=sqlerror&email=' . $email);

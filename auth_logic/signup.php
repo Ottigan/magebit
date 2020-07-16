@@ -21,7 +21,7 @@ if (isset($_POST['sign-up-btn'])) {
         exit();
     } else {
         $stmt = mysqli_stmt_init($conn);
-        $sql = 'SELECT emailUsers FROM users WHERE emailUsers=?';
+        $sql = 'SELECT emailUsers FROM users WHERE emailUsers = ?';
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header('location: ../index.php?error=sqlerror&name=' . $name . '&email=' . $email);

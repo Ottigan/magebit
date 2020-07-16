@@ -1,11 +1,11 @@
 <?php
 
 $servername = 'localhost';
-$dBUsername = 'root';
-$dBPassword = '';
-$dBName = 'loginsystem';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'magebit';
 
-$conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
+$conn = mysqli_connect($servername, $dbUsername, $dbPassword, $dbName);
 
 if (!$conn) {
     die('Connection failed: ' . mysqli_connect_error());

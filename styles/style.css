@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: NotoSansLight;
-  src: url(../assets/fonts/NotoSansJP-Light.otf);
-}
-
-@font-face {
   font-family: NotoSansRegular;
   src: url(../assets/fonts/NotoSansJP-Regular.otf);
 }
@@ -16,11 +11,6 @@
 @font-face {
   font-family: NotoSansMedium;
   src: url(../assets/fonts/NotoSansJP-Medium.otf);
-}
-
-@font-face {
-  font-family: NotoSansBold;
-  src: url(../assets/fonts/NotoSansJP-Bold.otf);
 }
 
 @font-face {
@@ -181,7 +171,7 @@ body main .container .dimension-border {
 body main .container .triangle {
   position: absolute;
   z-index: -2;
-  left: 4px;
+  left: 5px;
   height: 23px;
   width: 10px;
   background-color: #89deff;
@@ -284,6 +274,18 @@ body main .transformer-container .form-container .inner-form-container header di
 
 body main .transformer-container .form-container h2 {
   color: #3e495e;
+}
+
+body main .transformer-container .form-container .error-msg {
+  font-family: NotoSansMedium;
+  font-size: 14px;
+  color: #e04f4f;
+}
+
+body main .transformer-container .form-container .success-msg {
+  font-family: NotoSansMedium;
+  font-size: 14px;
+  color: #36ca56;
 }
 
 body main .transformer-container .form-container form {

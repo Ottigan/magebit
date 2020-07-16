@@ -51,18 +51,41 @@ session_start()
 				<div class="inner-form-container">
 					<header>
 						<div>
-							<h2>Login</h2>
+							<h2 class="transformer-h2">Login</h2>
 							<img src="assets/logo.png" alt="Logo of Magebit - Stylized warping letter M " />
 						</div>
 						<span class="under-line"></span>
 					</header>
+					<?php
+					if (isset($_GET['error'])) {
+						if ($_GET['error'] == 'emptyfields') {
+							echo  '<p class="error-msg">Empty fields not allowed</p>';
+						} else if ($_GET['error'] == 'sqlerror') {
+							echo  '<p class="error-msg">Oops! Something went wrong</p>';
+						} else if ($_GET['error'] == 'wrongpwd') {
+							echo  '<p class="error-msg">Incorrect password!</p>';
+						} else if ($_GET['error'] == 'noaccount') {
+							echo  '<p class="error-msg">Oops! Account does not exist!</p>';
+						} else if ($_GET['error'] == 'invalidnameemail') {
+							echo  '<p class="error-msg">Invalid name and email format!</p>';
+						} else if ($_GET['error'] == 'invalidemail') {
+							echo  '<p class="error-msg">Invalid email format!</p>';
+						} else if ($_GET['error'] == 'invalidname') {
+							echo  '<p class="error-msg">Invalid name format!</p>';
+						} else if ($_GET['error'] == 'emailtaken') {
+							echo  '<p class="error-msg">Invalid name format!</p>';
+						}
+					} else if (isset($_GET['signup']) && $_GET['signup'] == 'success') {
+						echo  '<p class="success-msg">Success!</p>';
+					}
+					?>
 					<form class="transformer-from" action="auth_logic/login.php" method="POST">
 						<div class="name-input-container">
 							<div class="input-container">
 								<label class="name-label" for="name">Name<span>*</span></label>
 								<img id="name-icon" src="assets/user_inactive.png" alt="Icon of a person" />
 							</div>
-							<input id="name" type="text" name="name" />
+							<input id="name" type="text" name="name" pattern="[A-Za-z ]+" autocomplete="off" />
 						</div>
 						<div class="email-input-container">
 							<div class="input-container">
@@ -92,7 +115,7 @@ session_start()
 	<footer>
 		<h5>ALL RIGHTS RESERVED "MAGEBIT" 2016.</h5>
 	</footer>
-	<script src="scripts/app.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 </html>
