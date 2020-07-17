@@ -1,10 +1,9 @@
 'use strict';
 
-const mainButton = document.querySelector('#main-button'),
+const mainContainer = document.querySelector('main'),
+	mainButton = document.querySelector('.main-button'),
 	movingPanel = document.querySelector('.transformer-container'),
 	dimensionBorder = document.querySelector('.dimension-border'),
-	signUpBtn = document.querySelector('.sign-up-span-btn'),
-	loginBtn = document.querySelector('.login-span-btn'),
 	formContainer = document.querySelector('.inner-form-container'),
 	transformerH2 = document.querySelector('.transformer-h2'),
 	form = document.querySelector('.transformer-from'),
@@ -15,6 +14,8 @@ const mainButton = document.querySelector('#main-button'),
 	emailInput = document.getElementById('email'),
 	passwordIcon = document.getElementById('password-icon'),
 	passwordInput = document.getElementById('password'),
+	hiddenSignUp = document.querySelector('.hidden-sign-up'),
+	hiddenLogin = document.querySelector('.hidden-login'),
 	url = document.URL;
 
 // Applying values to input elements
@@ -47,46 +48,85 @@ if (url.includes('signup=success') || url.includes('noaccount')) {
 }
 
 // Transforming all the parameters for the moving panel
-// so that it is possible to Sign Up
-signUpBtn.addEventListener('click', event => {
-	dimensionBorder.style.cssText =
-		'transform: translateX(-411px); transition: all linear 1s';
-	movingPanel.style.cssText =
-		'transform: translateX(-411px); transition: all linear 1s';
-	formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
-	setTimeout(() => {
-		transformerH2.innerHTML = 'Sign Up';
-		form.action = 'auth_logic/signup.php';
-		nameInput.setAttribute('required', 'true');
-		nameContainer.style.cssText =
-			'opacity: 1; display:flex; transition: all linear 0.5s';
-		mainButton.innerHTML = 'SIGN UP';
-		mainButton.name = 'sign-up-btn';
-		formContainer.style.cssText =
-			'opacity: 1; transition: opacity linear 0.5s; margin-top: 65px';
-	}, 500);
-});
+// whenever user click the BLUE BUTTON
+mainContainer.addEventListener('click', event => {
+	if (event.target.classList.contains('fake-sign-up-btn')) {
+		// Different behavior depending on current screen width,
+		// consider layouts and BUTTONS change
+		if (event.target.classList.contains('hidden-sign-up')) {
+			formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
+			setTimeout(() => {
+				transformerH2.innerHTML = 'Sign Up';
+				form.action = 'auth_logic/signup.php';
+				nameInput.setAttribute('required', 'true');
+				nameContainer.style.cssText =
+					'opacity: 1; display:flex; transition: all linear 0.5s';
+				mainButton.innerHTML = 'SIGN UP';
+				mainButton.name = 'sign-up-btn';
+				hiddenLogin.classList.toggle('hidden-btn');
+				event.target.classList.toggle('hidden-btn');
+				formContainer.style.cssText =
+					'opacity: 1; transition: opacity linear 0.5s;';
+			}, 500);
+		} else {
+			dimensionBorder.style.cssText =
+				'transform: translateX(-450%); transition: all linear 1s';
+			movingPanel.style.cssText =
+				'transform: translateX(-88%); transition: all linear 1s';
+			formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
+			setTimeout(() => {
+				transformerH2.innerHTML = 'Sign Up';
+				form.action = 'auth_logic/signup.php';
+				nameInput.setAttribute('required', 'true');
+				nameContainer.style.cssText =
+					'opacity: 1; display:flex; transition: all linear 0.5s';
+				mainButton.innerHTML = 'SIGN UP';
+				mainButton.name = 'sign-up-btn';
+				formContainer.style.cssText =
+					'opacity: 1; transition: opacity linear 0.5s;';
+			}, 500);
+		}
+	} else if (event.target.classList.contains('fake-login-btn')) {
+		// Different behavior depending on current screen width,
+		// consider layouts and BUTTONS change
+		if (event.target.classList.contains('hidden-login')) {
+			formContainer.style.cssText =
+				'opacity: 0; transition: opacity linear 0.5s;';
 
-// Transforming all the parameters to initial state
-// so that it is possible to Login
-loginBtn.addEventListener('click', event => {
-	dimensionBorder.style.cssText =
-		'transform: translateX(0px); transition: all linear 1s';
-	movingPanel.style.cssText =
-		'transform: translateX(0px); transition: all linear 1s';
-	formContainer.style.cssText =
-		'opacity: 0; transition: opacity linear 0.5s; margin-top: 65px';
+			setTimeout(() => {
+				transformerH2.innerHTML = 'Login';
+				form.action = 'auth_logic/login.php';
+				nameInput.removeAttribute('required');
+				nameContainer.style.cssText =
+					'opacity: 0; display:none; transition: opacity linear 0.5s';
+				mainButton.innerHTML = 'LOGIN';
+				mainButton.name = 'login-btn';
+				event.target.classList.toggle('hidden-btn');
+				hiddenSignUp.classList.toggle('hidden-btn');
+				formContainer.style.cssText =
+					'opacity: 1; transition: opacity linear 0.5s';
+			}, 500);
+		} else {
+			dimensionBorder.style.cssText =
+				'transform: translateX(0px); transition: all linear 1s';
+			movingPanel.style.cssText =
+				'transform: translateX(0px); transition: all linear 1s';
+			formContainer.style.cssText =
+				'opacity: 0; transition: opacity linear 0.5s;';
 
-	setTimeout(() => {
-		transformerH2.innerHTML = 'Login';
-		form.action = 'auth_logic/login.php';
-		nameInput.removeAttribute('required');
-		nameContainer.style.cssText =
-			'opacity: 0; display:none; transition: opacity linear 0.5s';
-		mainButton.innerHTML = 'LOGIN';
-		mainButton.name = 'login-btn';
-		formContainer.style.cssText = 'opacity: 1; transition: opacity linear 0.5s';
-	}, 500);
+			setTimeout(() => {
+				transformerH2.innerHTML = 'Login';
+				form.action = 'auth_logic/login.php';
+				nameInput.removeAttribute('required');
+				nameContainer.style.cssText =
+					'opacity: 0; display:none; transition: opacity linear 0.5s';
+				mainButton.innerHTML = 'LOGIN';
+				mainButton.name = 'login-btn';
+				formContainer.style.cssText =
+					'opacity: 1; transition: opacity linear 0.5s';
+			}, 500);
+		}
+	}
 });
 
 // Changing img src for focused inputs icon
@@ -100,7 +140,7 @@ formContainer.addEventListener('focusin', event => {
 	}
 });
 
-// Reverting img src for focused inputs icon
+// Reverting img src for focused input icon
 formContainer.addEventListener('focusout', event => {
 	if (event.target.id === 'name') {
 		nameIcon.src = 'assets/user_inactive.png';

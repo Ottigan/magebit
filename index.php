@@ -23,9 +23,9 @@ session_start()
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
-				<span class="sign-up-span-btn button">
-					<h4>SIGN UP</h4>
-				</span>
+				<button class="fake-sign-up-btn button">
+					SIGN UP
+				</button>
 			</div>
 			<div class="login-container">
 				<div class="login-block">
@@ -34,9 +34,9 @@ session_start()
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</p>
-					<span class="login-span-btn button">
-						<h4>LOGIN</h4>
-					</span>
+					<button class="fake-login-btn button">
+						LOGIN
+					</button>
 				</div>
 			</div>
 			<div class="dimension-border">
@@ -102,7 +102,13 @@ session_start()
 							</div>
 						</div>
 						<div class="main-button-container">
-							<button id="main-button" class="button" type="submit" name="login-btn">
+							<button class="button main-button" type="submit" name="login-btn">
+								LOGIN
+							</button>
+							<button class="fake-sign-up-btn button hidden-sign-up" type="button">
+								SIGN UP
+							</button>
+							<button class="fake-login-btn button hidden-login hidden-btn" type="button">
 								LOGIN
 							</button>
 							<p>Forgot?</p>

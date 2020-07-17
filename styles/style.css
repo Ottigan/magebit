@@ -51,14 +51,67 @@ body {
   background-repeat: no-repeat;
 }
 
+@media (min-width: 1333px) {
+  body {
+    -webkit-animation: bg-image 5s linear infinite alternate;
+            animation: bg-image 5s linear infinite alternate;
+  }
+  @-webkit-keyframes bg-image {
+    0% {
+      background-size: 105%;
+    }
+    50% {
+      background-size: 110%;
+    }
+    100% {
+      background-size: 115%;
+    }
+  }
+  @keyframes bg-image {
+    0% {
+      background-size: 105%;
+    }
+    50% {
+      background-size: 110%;
+    }
+    100% {
+      background-size: 115%;
+    }
+  }
+}
+
 body main {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: rgba(15, 26, 47, 0.9);
-  max-width: calc(48% + 2px);
-  height: 46%;
+  min-height: 46%;
+  width: 67%;
+}
+
+@media (max-width: 640px) {
+  body main {
+    bottom: 30px;
+    height: 75%;
+    width: 85%;
+  }
+}
+
+@media (max-width: 550px) {
+  body main {
+    bottom: unset;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main {
+    bottom: unset;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 body main .button {
@@ -77,23 +130,32 @@ body main .button {
   font-size: 12px;
   border-radius: 25px;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
+body main .button:focus {
+  outline: none;
+}
+
 body main .container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 82%;
+  width: 100%;
   margin: 0 auto;
   font-size: 19px;
   color: #fff;
+}
+
+@media (max-width: 1333px) {
+  body main .container * {
+    display: none !important;
+  }
 }
 
 body main .container .sign-up-block {
@@ -104,12 +166,16 @@ body main .container .sign-up-block {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 41%;
+  margin-left: 9%;
 }
 
 body main .container .sign-up-block h2,
 body main .container .sign-up-block p {
-  max-width: calc(72% - 2px);
+  max-width: 270px;
 }
 
 body main .container .login-container {
@@ -119,6 +185,9 @@ body main .container .login-container {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
 }
 
@@ -131,6 +200,11 @@ body main .container .login-container .login-block {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 80%;
+}
+
+body main .container .login-container .login-block h2,
+body main .container .login-container .login-block p {
+  max-width: 80%;
 }
 
 body main .container h2,
@@ -158,7 +232,7 @@ body main .container .dimension-border {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  left: 421px;
+  left: calc(46% + 2px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -167,9 +241,10 @@ body main .container .dimension-border {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
+  width: 10%;
 }
 
-body main .container .triangle {
+body main .container .dimension-border .triangle {
   position: absolute;
   z-index: -2;
   left: 4px;
@@ -178,7 +253,7 @@ body main .container .triangle {
   background-color: #89deff;
 }
 
-body main .container .solid-border {
+body main .container .dimension-border .solid-border {
   position: absolute;
   z-index: -1;
   height: 100%;
@@ -186,20 +261,20 @@ body main .container .solid-border {
   background-color: #20293a;
 }
 
-body main .container .top-triangle {
-  top: -19px;
+body main .container .dimension-border .top-triangle {
+  top: -18px;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
 }
 
-body main .container .bottom-triangle {
-  bottom: -19px;
+body main .container .dimension-border .bottom-triangle {
+  bottom: -18px;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
 }
 
 body main h2,
-body main span,
+body main span:first-of-type,
 body main p,
 body main input {
   margin-bottom: 22px;
@@ -207,7 +282,7 @@ body main input {
 
 body main h2 {
   font-family: NotoSansThin;
-  font-size: 26px;
+  font-size: 1.6rem;
 }
 
 body main .under-line {
@@ -222,10 +297,45 @@ body main .transformer-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: -20px;
-  right: 20px;
-  height: calc(100% + 40px);
-  width: 473px;
+  bottom: -20px;
+  right: 2%;
+  height: auto;
+  width: 51%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px #cfcfcf;
+          box-shadow: 0 0 2px #cfcfcf;
+}
+
+@media (max-width: 1333px) {
+  body main .transformer-container {
+    width: auto;
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  body main .transformer-container {
+    width: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main .transformer-container {
+    width: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
 }
 
 body main .transformer-container .form-container {
@@ -235,14 +345,11 @@ body main .transformer-container .form-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  background-color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   width: 100%;
-  -webkit-box-shadow: 0 0 2px #cfcfcf;
-          box-shadow: 0 0 2px #cfcfcf;
 }
 
 body main .transformer-container .form-container .inner-form-container {
@@ -253,15 +360,24 @@ body main .transformer-container .form-container .inner-form-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 61%;
   width: 60%;
-  margin-top: 79px;
+}
+
+@media (max-width: 450px) {
+  body main .transformer-container .form-container .inner-form-container {
+    height: 50%;
+    width: 80%;
+  }
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main .transformer-container .form-container .inner-form-container {
+    position: relative;
+    top: -15px;
+  }
 }
 
 body main .transformer-container .form-container .inner-form-container header {
@@ -341,6 +457,14 @@ body main .transformer-container .form-container .inner-form-container form .pas
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
   margin-bottom: 25px;
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main .transformer-container .form-container .inner-form-container form .name-input-container,
+  body main .transformer-container .form-container .inner-form-container form .email-input-container,
+  body main .transformer-container .form-container .inner-form-container form .password-input-container {
+    margin-bottom: 10px;
+  }
 }
 
 body main .transformer-container .form-container .inner-form-container form .name-input-container {
@@ -424,9 +548,72 @@ body main .transformer-container .form-container .inner-form-container form .mai
   margin-top: 8px;
 }
 
+@media (max-width: 980px) {
+  body main .transformer-container .form-container .inner-form-container form .main-button-container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main .transformer-container .form-container .inner-form-container form .main-button-container {
+    margin-top: unset;
+  }
+}
+
 body main .transformer-container .form-container .inner-form-container form .main-button-container .button {
   background-color: #f89a35;
   border: none;
+  text-align: center;
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+  display: none;
+  margin-bottom: 0px;
+}
+
+@media (max-width: 1333px) {
+  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+    display: block;
+  }
+}
+
+@media (max-width: 980px) {
+  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: 25px 60px 0 0;
+  }
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: unset;
+  }
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-btn {
+  display: none;
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn {
+  background-color: #49abfe;
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn:hover {
+  background-color: #186eb9;
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn {
+  background-color: #49abfe;
+}
+
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn:hover {
+  background-color: #186eb9;
 }
 
 body main .transformer-container .form-container .inner-form-container form .main-button-container .button:focus {
@@ -452,5 +639,12 @@ body footer {
   font-family: NotoSansBlack;
   font-size: 14px;
   letter-spacing: 2px;
+  text-align: center;
+}
+
+@media (max-height: 440px) and (orientation: landscape) {
+  body footer {
+    bottom: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
