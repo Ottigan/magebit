@@ -44,6 +44,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  width: 100vw;
   background-image: url("../assets/bird-bg-img.jpg");
   background-position: center;
   background-size: cover;
@@ -56,7 +57,7 @@ body main {
   display: -ms-flexbox;
   display: flex;
   background-color: rgba(15, 26, 47, 0.9);
-  max-width: 924px;
+  max-width: calc(48% + 2px);
   height: 46%;
 }
 
@@ -171,7 +172,7 @@ body main .container .dimension-border {
 body main .container .triangle {
   position: absolute;
   z-index: -2;
-  left: 5px;
+  left: 4px;
   height: 23px;
   width: 10px;
   background-color: #89deff;
@@ -186,15 +187,34 @@ body main .container .solid-border {
 }
 
 body main .container .top-triangle {
-  top: -20px;
-  -webkit-transform: rotate(20deg);
-          transform: rotate(20deg);
+  top: -19px;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
 }
 
 body main .container .bottom-triangle {
-  bottom: -20px;
-  -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
+  bottom: -19px;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+body main h2,
+body main span,
+body main p,
+body main input {
+  margin-bottom: 22px;
+}
+
+body main h2 {
+  font-family: NotoSansThin;
+  font-size: 26px;
+}
+
+body main .under-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #49abfe;
 }
 
 body main .transformer-container {
@@ -267,28 +287,28 @@ body main .transformer-container .form-container .inner-form-container header di
           align-items: flex-start;
 }
 
-body main .transformer-container .form-container .inner-form-container header div img {
-  height: 100%;
-  width: auto;
-}
-
-body main .transformer-container .form-container h2 {
+body main .transformer-container .form-container .inner-form-container header div h2 {
   color: #3e495e;
 }
 
-body main .transformer-container .form-container .error-msg {
+body main .transformer-container .form-container .inner-form-container header div img {
+  height: 30px;
+  width: auto;
+}
+
+body main .transformer-container .form-container .inner-form-container .error-msg {
   font-family: NotoSansMedium;
   font-size: 14px;
   color: #e04f4f;
 }
 
-body main .transformer-container .form-container .success-msg {
+body main .transformer-container .form-container .inner-form-container .success-msg {
   font-family: NotoSansMedium;
   font-size: 14px;
   color: #36ca56;
 }
 
-body main .transformer-container .form-container form {
+body main .transformer-container .form-container .inner-form-container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,21 +326,28 @@ body main .transformer-container .form-container form {
   height: 100%;
 }
 
-body main .transformer-container .form-container form .name-input-container {
-  display: none;
-}
-
-body main .transformer-container .form-container form .name-input-container,
-body main .transformer-container .form-container form .email-input-container,
-body main .transformer-container .form-container form .password-input-container {
-  margin-bottom: 25px;
-}
-
-body main .transformer-container .form-container form div {
+body main .transformer-container .form-container .inner-form-container form div {
   width: 100%;
 }
 
-body main .transformer-container .form-container form .input-container {
+body main .transformer-container .form-container .inner-form-container form .name-input-container,
+body main .transformer-container .form-container .inner-form-container form .email-input-container,
+body main .transformer-container .form-container .inner-form-container form .password-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-bottom: 25px;
+}
+
+body main .transformer-container .form-container .inner-form-container form .name-input-container {
+  display: none;
+}
+
+body main .transformer-container .form-container .inner-form-container form .input-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -334,12 +361,13 @@ body main .transformer-container .form-container form .input-container {
   width: 100%;
 }
 
-body main .transformer-container .form-container form .input-container span {
+body main .transformer-container .form-container .inner-form-container form .input-container label::after {
+  content: '*';
   color: #f44368;
   font-size: 14px;
 }
 
-body main .transformer-container .form-container form .input-container img {
+body main .transformer-container .form-container .inner-form-container form .input-container img {
   position: absolute;
   bottom: -2px;
   right: 0;
@@ -347,27 +375,43 @@ body main .transformer-container .form-container form .input-container img {
   width: 16px;
 }
 
-body main .transformer-container .form-container form input {
+body main .transformer-container .form-container .inner-form-container form input {
+  height: 25px;
+  width: 100%;
+  margin: 0px;
+  font-family: NotoSansMedium;
+  font-size: 14px;
+  color: #3e495e;
   background-color: transparent;
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-bottom: 1px solid #cbd2df;
-  width: 100%;
-  height: 25px;
+  /*
+							||||||||||||||||||||||||||||||||||
+							|| OVERRIDING USER AGENT STYLES || 
+							||||||||||||||||||||||||||||||||||*/
 }
 
-body main .transformer-container .form-container form input:focus {
+body main .transformer-container .form-container .inner-form-container form input:focus {
   outline: none;
   padding-bottom: 5px;
 }
 
-body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container form input:-webkit-autofill, body main .transformer-container .form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container form input:-webkit-autofill:focus {
+body main .transformer-container .form-container .inner-form-container form input:focus + div label {
+  font-family: NotoSansRegular;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill::first-line {
+  font-family: NotoSansMedium;
+  font-size: 14px;
   -webkit-box-shadow: 0 0 0px 1000px white inset;
           box-shadow: 0 0 0px 1000px white inset;
 }
 
-body main .transformer-container .form-container form .main-button-container {
+body main .transformer-container .form-container .inner-form-container form .main-button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,51 +424,25 @@ body main .transformer-container .form-container form .main-button-container {
   margin-top: 8px;
 }
 
-body main .transformer-container .form-container form .main-button-container .button {
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button {
   background-color: #f89a35;
   border: none;
 }
 
-body main .transformer-container .form-container form .main-button-container .button:focus {
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button:focus {
   outline: none;
 }
 
-body main .transformer-container .form-container form .main-button-container .button:hover {
+body main .transformer-container .form-container .inner-form-container form .main-button-container .button:hover {
   background-color: #f8bf35;
 }
 
-body main .transformer-container .form-container form label,
-body main .transformer-container .form-container form p {
+body main .transformer-container .form-container .inner-form-container form label,
+body main .transformer-container .form-container .inner-form-container form p {
   margin: 0px;
   font-family: NotoSansRegular;
   font-size: 14px;
   color: #8495b7;
-}
-
-body main .transformer-container .form-container form input {
-  margin: 0px;
-  font-family: NotoSansMedium;
-  font-size: 14px;
-  color: #3e495e;
-}
-
-body main h2,
-body main span,
-body main p,
-body main input {
-  margin-bottom: 22px;
-}
-
-body main h2 {
-  font-family: NotoSansThin;
-  font-size: 26px;
-}
-
-body main .under-line {
-  display: block;
-  width: 40px;
-  height: 2px;
-  background-color: #49abfe;
 }
 
 body footer {

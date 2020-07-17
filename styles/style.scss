@@ -16,6 +16,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	width: 100vw;
 	background-image: url('../assets/bird-bg-img.jpg');
 	background-position: center;
 	background-size: cover;
@@ -25,7 +26,7 @@ body {
 		position: relative;
 		display: flex;
 		background-color: $base-bg-clr;
-		max-width: 924px;
+		max-width: calc(48% + 2px);
 		height: 46%;
 
 		.button {
@@ -37,7 +38,7 @@ body {
 			font-family: NotoSansRegular;
 			font-size: 12px;
 			border-radius: 25px;
-			color: $base-txt-clr;
+			color: $secondary-txt-clr;
 			cursor: pointer;
 		}
 
@@ -48,7 +49,7 @@ body {
 			width: 82%;
 			margin: 0 auto;
 			font-size: 19px;
-			color: $base-txt-clr;
+			color: $secondary-txt-clr;
 
 			.sign-up-block {
 				display: flex;
@@ -75,7 +76,7 @@ body {
 
 			h2,
 			p {
-				color: $base-txt-clr;
+				color: $secondary-txt-clr;
 			}
 
 			p {
@@ -105,7 +106,7 @@ body {
 			.triangle {
 				position: absolute;
 				z-index: -2;
-				left: 5px;
+				left: 4px;
 				height: 23px;
 				width: 10px;
 				background-color: $dimension-triangle-clr;
@@ -120,14 +121,33 @@ body {
 			}
 
 			.top-triangle {
-				top: -20px;
-				transform: rotate(20deg);
+				top: -19px;
+				transform: rotate(25deg);
 			}
 
 			.bottom-triangle {
-				bottom: -20px;
-				transform: rotate(-20deg);
+				bottom: -19px;
+				transform: rotate(-25deg);
 			}
+		}
+
+		h2,
+		span,
+		p,
+		input {
+			margin-bottom: 22px;
+		}
+
+		h2 {
+			font-family: NotoSansThin;
+			font-size: 26px;
+		}
+
+		.under-line {
+			display: block;
+			width: 40px;
+			height: 2px;
+			background-color: $accent-clr;
 		}
 
 		.transformer-container {
@@ -166,155 +186,148 @@ body {
 							justify-content: space-between;
 							align-items: flex-start;
 
+							h2 {
+								color: $primary-txt-clr;
+							}
+
 							img {
-								height: 100%;
+								height: 30px;
 								width: auto;
 							}
 						}
 					}
-				}
 
-				h2 {
-					color: $front-h2-clr;
-				}
-
-				.error-msg {
-					font-family: NotoSansMedium;
-					font-size: 14px;
-					color: $error-txt-clr;
-				}
-
-				.success-msg {
-					font-family: NotoSansMedium;
-					font-size: 14px;
-					color: $success-txt-clr;
-				}
-
-				form {
-					display: flex;
-					justify-content: center;
-					flex-direction: column;
-					align-items: center;
-					width: 100%;
-					height: 100%;
-
-					.name-input-container {
-						display: none;
+					.error-msg {
+						font-family: NotoSansMedium;
+						font-size: 14px;
+						color: $error-txt-clr;
 					}
 
-					.name-input-container,
-					.email-input-container,
-					.password-input-container {
-						margin-bottom: 25px;
+					.success-msg {
+						font-family: NotoSansMedium;
+						font-size: 14px;
+						color: $success-txt-clr;
 					}
 
-					div {
-						width: 100%;
-					}
-
-					.input-container {
-						position: relative;
+					form {
 						display: flex;
-						justify-content: space-between;
-						align-items: flex-end;
-						width: 100%;
-
-						span {
-							color: $required-star-clr;
-							font-size: 14px;
-						}
-
-						img {
-							position: absolute;
-							bottom: -2px;
-							right: 0;
-							height: auto;
-							width: 16px;
-						}
-					}
-
-					// Removing useragent styles
-					input {
-						background-color: transparent;
-						border: none;
-						box-shadow: none;
-						border-bottom: 1px solid $input-border-clr;
-						width: 100%;
-						height: 25px;
-
-						&:focus {
-							outline: none;
-							padding-bottom: 5px;
-						}
-
-						&:-webkit-autofill,
-						&:-webkit-autofill:hover,
-						&:-webkit-autofill:focus,
-						&:-webkit-autofill,
-						&:-webkit-autofill:hover,
-						&:-webkit-autofill:focus,
-						&:-webkit-autofill,
-						&:-webkit-autofill:hover,
-						&:-webkit-autofill:focus {
-							box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
-						}
-					}
-
-					.main-button-container {
-						display: flex;
+						justify-content: center;
+						flex-direction: column;
 						align-items: center;
-						justify-content: space-between;
-						margin-top: 8px;
+						width: 100%;
+						height: 100%;
 
-						.button {
-							background-color: $primary-btn-clr;
+						div {
+							width: 100%;
+						}
+
+						.name-input-container,
+						.email-input-container,
+						.password-input-container {
+							display: flex;
+							flex-direction: column-reverse;
+							margin-bottom: 25px;
+						}
+
+						.name-input-container {
+							display: none;
+						}
+
+						.input-container {
+							position: relative;
+							display: flex;
+							justify-content: space-between;
+							align-items: flex-end;
+							width: 100%;
+
+							label::after {
+								content: '*';
+								color: $required-star-clr;
+								font-size: 14px;
+							}
+
+							img {
+								position: absolute;
+								bottom: -2px;
+								right: 0;
+								height: auto;
+								width: 16px;
+							}
+						}
+
+						input {
+							height: 25px;
+							width: 100%;
+							margin: 0px;
+							font-family: NotoSansMedium;
+							font-size: 14px;
+							color: $primary-txt-clr;
+							background-color: transparent;
 							border: none;
+							box-shadow: none;
+							border-bottom: 1px solid $input-border-clr;
 
 							&:focus {
 								outline: none;
+								padding-bottom: 5px;
+
+								+ div label {
+									font-family: NotoSansRegular;
+									text-transform: uppercase;
+									font-size: 11px;
+								}
 							}
 
-							&:hover {
-								background-color: $primary-btn-clr-hover;
+							/*
+							||||||||||||||||||||||||||||||||||
+							|| OVERRIDING USER AGENT STYLES || 
+							||||||||||||||||||||||||||||||||||*/
+							&:-webkit-autofill,
+							&:-webkit-autofill:hover,
+							&:-webkit-autofill:focus,
+							&:-webkit-autofill,
+							&:-webkit-autofill:hover,
+							&:-webkit-autofill:focus,
+							&:-webkit-autofill,
+							&:-webkit-autofill:hover,
+							&:-webkit-autofill:focus,
+							&:-webkit-autofill::first-line {
+								font-family: NotoSansMedium;
+								font-size: 14px;
+								box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
 							}
 						}
-					}
 
-					label,
-					p {
-						margin: 0px;
-						font-family: NotoSansRegular;
-						font-size: 14px;
-						color: $label-txt-clr;
-					}
+						.main-button-container {
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							margin-top: 8px;
 
-					input {
-						margin: 0px;
-						font-family: NotoSansMedium;
-						font-size: 14px;
-						color: $input-txt-clr;
+							.button {
+								background-color: $primary-btn-clr;
+								border: none;
+
+								&:focus {
+									outline: none;
+								}
+
+								&:hover {
+									background-color: $primary-btn-clr-hover;
+								}
+							}
+						}
+
+						label,
+						p {
+							margin: 0px;
+							font-family: NotoSansRegular;
+							font-size: 14px;
+							color: $label-txt-clr;
+						}
 					}
 				}
 			}
-		}
-
-		h2,
-		span,
-		p,
-		input {
-			margin-bottom: 22px;
-		}
-
-		h2 {
-			font-family: NotoSansThin;
-			font-size: 26px;
-		}
-
-		.under-line {
-			display: block;
-			width: 40px;
-			height: 2px;
-			background-color: $accent-clr;
 		}
 	}
 

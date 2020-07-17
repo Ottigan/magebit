@@ -39,14 +39,14 @@ header {
 		}
 
 		.button {
-			width: 60px;
-			height: 30px;
+			width: 100px;
+			height: 40px;
 			font-family: NotoSansRegular;
-			font-size: 12px;
-			border-radius: 3px;
+			font-size: 14px;
+			border-radius: 5px;
 			border: none;
 			background-color: $primary-btn-clr;
-			color: $base-txt-clr;
+			color: $secondary-txt-clr;
 			cursor: pointer;
 
 			&:focus {
@@ -62,151 +62,246 @@ header {
 
 main {
 	display: flex;
-	min-height: 70%;
-	width: 900px;
-}
-
-.dark-container {
-	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	height: 80%;
-	width: 80%;
-	margin: auto;
-	padding: 50px;
-	background-color: $base-bg-clr;
-}
+	width: 100vw;
 
-.add-attribute-form {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	height: 100px;
-	width: 100%;
-	margin-bottom: 30px;
-	background-color: $front-bg-clr;
-
-	span {
-		margin: 20px;
-		width: 100%;
-
-		label {
-			margin: 0px;
-			font-family: NotoSansRegular;
-			font-size: 14px;
-			color: $label-txt-clr;
-		}
-
-		input {
-			background-color: transparent;
-			border: none;
-			box-shadow: none;
-			border-bottom: 1px solid $input-border-clr;
-			height: 25px;
-			width: 100%;
-
-			&:focus {
-				outline: none;
-				padding-bottom: 5px;
-			}
-
-			&:-webkit-autofill,
-			&:-webkit-autofill:hover,
-			&:-webkit-autofill:focus,
-			&:-webkit-autofill,
-			&:-webkit-autofill:hover,
-			&:-webkit-autofill:focus,
-			&:-webkit-autofill,
-			&:-webkit-autofill:hover,
-			&:-webkit-autofill:focus {
-				box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
-			}
-		}
-	}
-
-	.button {
-		width: 100px;
-		height: 40px;
-		margin: 20px;
-		font-family: NotoSansRegular;
-		font-size: 12px;
-		border-radius: 3px;
-		border: none;
-		background-color: $primary-btn-clr;
-		color: $base-txt-clr;
-		cursor: pointer;
-
-		&:focus {
-			outline: none;
-		}
-
-		&:hover {
-			background-color: $primary-btn-clr-hover;
-		}
-	}
-}
-
-table {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-	padding: 30px;
-	background-color: $front-bg-clr;
-	overflow-y: scroll;
-
-	thead {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-
-		tr {
-			display: flex;
-			width: 100%;
-			margin-bottom: 10px;
-
-			th {
-				flex: 1 0 0;
-				width: auto;
-				border-bottom: 1px solid $input-border-clr;
-			}
-		}
-	}
-
-	tbody {
+	.dark-container {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
+		align-items: center;
+		height: 600px;
+		width: calc(48% + 2px);
+		margin-top: 50px;
+		padding: 50px;
+		background-color: $base-bg-clr;
 
-		tr {
+		h1 {
+			margin-bottom: 50px;
+			font-family: NotoSansThin;
+			font-size: 32px;
+			color: $front-bg-clr;
+			line-height: 1;
+			word-spacing: 10px;
+		}
+
+		.add-attribute-form {
 			display: flex;
-			height: 20px;
+			justify-content: space-between;
+			align-items: flex-end;
+			height: 80px;
 			width: 100%;
-			margin-bottom: 2px;
+			margin-bottom: 30px;
+			background-color: $front-bg-clr;
 
-			td {
-				flex: 1 0 0;
-				text-indent: 5px;
-				border: 1px solid black;
+			span {
+				display: flex;
+				flex-direction: column;
+				margin: 0px 20px;
+				width: 100%;
 
-				&:nth-child(2) {
-					margin: 0 2px;
+				&:nth-child(1) {
+					width: 50%;
 				}
 
-				&:nth-child(3) {
-					display: flex;
+				label {
+					order: -1;
+					margin: 0px;
+					font-family: NotoSansRegular;
+					font-size: 14px;
+					color: $label-txt-clr;
 				}
 
-				a {
+				input {
+					height: 25px;
 					width: 100%;
-					padding-top: 2px;
-					font-size: 12px;
-					text-align: center;
+					background-color: transparent;
+					border: none;
+					box-shadow: none;
+					border-bottom: 1px solid $input-border-clr;
 					font-family: NotoSansMedium;
-					line-height: 1;
-					border: 1px solid black;
-					text-decoration: none;
+					font-size: 14px;
+					color: $primary-txt-clr;
+
+					&:focus {
+						outline: none;
+						padding-bottom: 5px;
+					}
+
+					&:focus + label {
+						font-family: NotoSansRegular;
+						text-transform: uppercase;
+						font-size: 11px;
+					}
+				}
+			}
+
+			.button {
+				width: 50%;
+				height: 36px;
+				margin: 0 30px 20px 20px;
+				font-family: NotoSansRegular;
+				font-size: 14px;
+				border-radius: 5px;
+				border: none;
+				background-color: $primary-btn-clr;
+				color: $secondary-txt-clr;
+				cursor: pointer;
+
+				&:focus {
+					outline: none;
+				}
+
+				&:hover {
+					background-color: $primary-btn-clr-hover;
+				}
+			}
+		}
+
+		table {
+			display: flex;
+			height: 350px;
+			width: 100%;
+			padding: 20px;
+			background-color: $front-bg-clr;
+			overflow-y: scroll;
+
+			&::-webkit-scrollbar-track {
+				margin: 0px;
+				background-color: $front-bg-clr;
+			}
+
+			&::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $accent-clr;
+			}
+
+			tbody {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+
+				tr {
+					display: flex;
+					width: 100%;
+					margin-bottom: 20px;
+
+					td {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						min-height: 36px;
+						font-size: 12px;
+						font-family: NotoSansRegular;
+						color: $primary-txt-clr;
+						border-radius: 3px;
+
+						&:nth-child(1) {
+							height: 36px;
+							width: 50%;
+						}
+
+						&:nth-child(1),
+						&:nth-child(2) {
+							box-shadow: 1px 1px 3px inset $table-td-shadow;
+						}
+
+						&:nth-child(2) {
+							justify-content: flex-start;
+							width: 100%;
+							margin: 0 40px;
+							padding-left: 5px;
+						}
+
+						&:nth-child(3) {
+							display: flex;
+							justify-content: space-between;
+							width: 50%;
+						}
+
+						input {
+							height: 100%;
+							width: 100%;
+							background-color: transparent;
+							border: none;
+							border-radius: 3px;
+							box-shadow: 0 0 3px $accent-clr;
+							text-align: center;
+
+							&:focus {
+								font-size: 12px;
+								font-family: NotoSansMedium;
+								color: $primary-txt-clr;
+								outline: none;
+							}
+						}
+
+						textarea {
+							min-height: 36px;
+							width: 100%;
+							padding-top: 11px;
+							padding-left: 4px;
+							resize: vertical;
+							border: none;
+							border-radius: 3px;
+							box-shadow: 0 0 3px $accent-clr,
+								1px 1px 3px inset $table-td-shadow;
+							font-size: 12px;
+							font-family: NotoSansRegular;
+							line-height: 1;
+
+							&:focus {
+								outline: none;
+								font-size: 12px;
+								font-family: NotoSansMedium;
+								color: $primary-txt-clr;
+							}
+						}
+
+						a {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							height: 36px;
+							width: 100%;
+							font-size: 12px;
+							text-align: center;
+							font-family: NotoSansMedium;
+							color: $front-bg-clr;
+							text-decoration: none;
+							border-radius: 5px;
+
+							&.remove {
+								background-color: $remove-btn-clr;
+
+								&:hover {
+									background-color: $remove-btn-clr-hover;
+								}
+							}
+
+							&.edit {
+								background-color: $primary-btn-clr;
+								margin-right: 10px;
+
+								&:hover {
+									background-color: $primary-btn-clr-hover;
+								}
+							}
+
+							&.save {
+								background-color: $accent-clr;
+								margin-right: 10px;
+
+								&:hover {
+									background-color: $save-btn-clr-hover;
+								}
+							}
+						}
+					}
 				}
 			}
 		}

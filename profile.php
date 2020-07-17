@@ -6,26 +6,67 @@ if (!isset($_SESSION['id'])) {
 } else {
     require 'auth_logic/db.php';
 
+    // Add new Characteristics to DB
     if (isset($_GET['add-attribute-btn']) && !empty($_GET['attribute']) && !empty($_GET['value'])) {
         $user = $_SESSION['id'];
         $attribute = $_GET['attribute'];
         $value = $_GET['value'];
-        mysqli_query(
-            $conn,
-            "INSERT INTO attributes (attribute, attribValue, user)
-             VALUES ('$attribute', '$value', '$user')"
-        );
-        header('location: profile.php');
+        $stmt = mysqli_stmt_init($conn);
+        $sql = "INSERT INTO attributes (attribute, attribValue, user)
+             VALUES (?, ?, ?)";
+
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header('location: profile.php');
+        } else {
+            mysqli_stmt_bind_param($stmt, 'ssi', $attribute, $value, $user);
+            mysqli_stmt_execute($stmt);
+            header('location: profile.php');
+        }
     }
 
     // Remove item
     if (isset($_GET['remove'])) {
         $id = $_GET['remove'];
-        mysqli_query($conn, "DELETE FROM attributes WHERE id = $id");
-        header('location: profile.php');
+        $stmt = mysqli_stmt_init($conn);
+        $sql = "DELETE FROM attributes WHERE id = ?";
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header('location: profile.php');
+        } else {
+            mysqli_stmt_bind_param($stmt, 'i', $id);
+            mysqli_stmt_execute($stmt);
+            header('location: profile.php');
+        }
     }
 
-    $attributes = mysqli_query($conn, "SELECT * FROM attributes WHERE user = $_SESSION[id]");
+    // Edit/Save item
+    if (isset($_GET['edit'])) {
+        $id = $_GET['edit'];
+        $attribute = $_GET['attribute'];
+        $value = $_GET['attribValue'];
+        $stmt = mysqli_stmt_init($conn);
+        $sql = 'UPDATE attributes SET attribute = ?, attribValue = ? WHERE id = ?';
+
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header('location: profile.php');
+        } else {
+            mysqli_stmt_bind_param($stmt, 'ssi', $attribute,  $value, $id);
+            mysqli_stmt_execute($stmt);
+            header('location: profile.php');
+        }
+    }
+
+    // Fetch all the current Characteristics for the currently logged in USER
+    $stmt = mysqli_stmt_init($conn);
+    $sql = 'SELECT * FROM attributes WHERE user = ?';
+    $attributes;
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header('location: profile.php');
+    } else {
+        mysqli_stmt_bind_param($stmt, 'i', $_SESSION['id']);
+        mysqli_stmt_execute($stmt);
+        $attributes = mysqli_stmt_get_result($stmt);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -36,59 +77,52 @@ if (!isset($_SESSION['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/profile.css?" type="text/css">
 </head>
 
 <body>
     <header>
         <form action="auth_logic/logout.php" method="POST">
-            <?php
-            echo "<p>Welcome, $_SESSION[name]</p>";
-            ?>
             <button class="log-out-btn button" type="submit">Log Out</button>
         </form>
     </header>
 
     <main class="main-container">
         <div class="dark-container">
+            <?php
+            echo "<h1>About $_SESSION[name]</h1>";
+            ?>
             <form class="add-attribute-form" action="profile.php" method="GET">
                 <span>
-                    <label>Attribute</label><br>
-                    <input type='text' name='attribute' autocomplete="off">
+                    <input id="input-attribute" type='text' name='attribute' autocomplete="off" required>
+                    <label for="input-attribute">Characteristic</label><br>
                 </span><br>
                 <span>
-                    <label>Description</label><br>
-                    <input type='text' name='value' autocomplete="off">
+                    <input id="input-value" type='text' name='value' autocomplete="off" required>
+                    <label for="input-value">Description</label><br>
                 </span>
                 <button class="button" type="submit" name="add-attribute-btn">Add</button>
             </form>
             <table>
-                <thead>
-                    <tr>
-                        <th>Characteristics</th>
-                        <th>Values</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <?php while ($row = mysqli_fetch_array($attributes)) { ?>
-                        <tr>
-                            <td><?php echo $row['attribute'] ?></td>
-                            <td><?php echo $row['attribValue'] ?></td>
+                        <tr <?php echo "id='row-$row[id]'" ?>>
+                            <?php echo "<td id='attribute-$row[id]'>$row[attribute]</td>" ?>
+                            <?php echo "<td id='attribValue-$row[id]'>$row[attribValue]</td>" ?>
                             <td>
-                                <a href="profile.php?remove=<?php echo $row['id']; ?>">Remove</a>
-                                <a href="profile.php?edit=<?php echo $row['id']; ?>">Edit</a>
+                                <a <?php echo "id='$row[id]' class='edit' href='#'" ?>>Edit</a>
+                                <a <?php echo "class='remove' href='profile.php?remove=$row[id];'" ?>>Remove</a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
-                <tfoot></tfoot>
             </table>
         </div>
     </main>
     <footer>
         <h5>ALL RIGHTS RESERVED "MAGEBIT" 2016.</h5>
     </footer>
+    <script src="js/profile.js"></script>
 </body>
 
 </html>

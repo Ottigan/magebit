@@ -81,25 +81,25 @@ session_start()
 					?>
 					<form class="transformer-from" action="auth_logic/login.php" method="POST">
 						<div class="name-input-container">
+							<input id="name" type="text" name="name" pattern="[A-Za-z ]+" autocomplete="off" />
 							<div class="input-container">
-								<label class="name-label" for="name">Name<span>*</span></label>
+								<label class="name-label" for="name">Name</label>
 								<img id="name-icon" src="assets/user_inactive.png" alt="Icon of a person" />
 							</div>
-							<input id="name" type="text" name="name" pattern="[A-Za-z ]+" autocomplete="off" />
 						</div>
 						<div class="email-input-container">
+							<input id="email" type="email" name="email" autocomplete="email" required />
 							<div class="input-container">
-								<label class="email-label" for="email">Email<span>*</span></label>
+								<label class="email-label" for="email">Email</label>
 								<img id="email-icon" src="assets/mail_inactive.png" alt="Icon of an envelope" />
 							</div>
-							<input id="email" type="email" name="email" autocomplete="email" required />
 						</div>
 						<div class="password-input-container">
+							<input id="password" type="password" name="pwd" autocomplete="current-password" required />
 							<div class="input-container">
-								<label class="password-label" for="password">Password<span>*</span></label>
+								<label class="password-label" for="password">Password</label>
 								<img id="password-icon" src="assets/lock_inactive.png" alt="Icon of a lock" />
 							</div>
-							<input id="password" type="password" name="pwd" autocomplete="current-password" required />
 						</div>
 						<div class="main-button-container">
 							<button id="main-button" class="button" type="submit" name="login-btn">
