@@ -92,19 +92,21 @@ if (!isset($_SESSION['id'])) {
             <?php
             echo "<h1>About $_SESSION[name]</h1>";
             ?>
+            <span class="under-line"></span>
             <form class="add-attribute-form" action="profile.php" method="GET">
                 <span>
-                    <input id="input-attribute" type='text' name='attribute' autocomplete="off" required>
-                    <label for="input-attribute">Characteristic</label><br>
-                </span><br>
+                    <input id="input-attribute" type='text' name='attribute' maxlength="18" autocomplete="off" required>
+                    <label for="input-attribute">Characteristic</label>
+                </span>
                 <span>
                     <input id="input-value" type='text' name='value' autocomplete="off" required>
-                    <label for="input-value">Description</label><br>
+                    <label for="input-value">Description</label>
                 </span>
                 <button class="button" type="submit" name="add-attribute-btn">Add</button>
             </form>
             <table>
                 <tbody>
+                    <!-- Populating the table with attributes added to DB -->
                     <?php while ($row = mysqli_fetch_array($attributes)) { ?>
                         <tr <?php echo "id='row-$row[id]'" ?>>
                             <?php echo "<td id='attribute-$row[id]'>$row[attribute]</td>" ?>

@@ -15,11 +15,27 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	width: 100vw;
 	background-image: url('../assets/bird-bg-img.jpg');
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	@media (min-width: 1333px) {
+		animation: bg-image 5s linear infinite alternate;
+
+		@keyframes bg-image {
+			0% {
+				background-size: 105%;
+			}
+			50% {
+				background-size: 110%;
+			}
+			100% {
+				background-size: 115%;
+			}
+		}
+	}
 }
 
 header {
@@ -49,6 +65,10 @@ header {
 			color: $secondary-txt-clr;
 			cursor: pointer;
 
+			@media (max-width: 550px) {
+				width: 60px;
+			}
+
 			&:focus {
 				outline: none;
 			}
@@ -64,44 +84,135 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100vh;
 	width: 100vw;
 
 	.dark-container {
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 		align-items: center;
-		height: 600px;
-		width: calc(48% + 2px);
-		margin-top: 50px;
-		padding: 50px;
+		width: 67%;
+		padding: 40px;
 		background-color: $base-bg-clr;
+		border-radius: 5px;
+
+		.under-line {
+			display: block;
+			width: 80px;
+			height: 2px;
+			margin-bottom: 25px;
+			background-color: $accent-clr;
+		}
+
+		@media (max-width: 980px) {
+			height: 700px;
+			width: 80%;
+			padding: 40px;
+		}
+
+		@media (max-width: 550px) {
+			justify-content: flex-start;
+			height: 100%;
+			width: 100%;
+			padding: unset;
+			border-radius: unset;
+			background-color: $front-bg-clr;
+		}
+
+		@media (max-height: 440px) and (orientation: landscape) {
+			justify-content: flex-start;
+			height: 100%;
+			width: 100%;
+			padding: unset;
+			border-radius: unset;
+			background-color: $front-bg-clr;
+		}
 
 		h1 {
-			margin-bottom: 50px;
+			margin-top: -20px;
+			margin-bottom: 10px;
 			font-family: NotoSansThin;
 			font-size: 32px;
 			color: $front-bg-clr;
 			line-height: 1;
 			word-spacing: 10px;
+
+			@media (max-width: 550px) {
+				margin-top: 70px;
+				color: $primary-txt-clr;
+			}
+
+			@media (max-height: 440px) and (orientation: landscape) {
+				margin-top: 20px;
+				color: $primary-txt-clr;
+			}
 		}
 
 		.add-attribute-form {
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			align-items: flex-end;
-			height: 80px;
 			width: 100%;
 			margin-bottom: 30px;
+			padding: 20px;
 			background-color: $front-bg-clr;
+			border-radius: 5px;
+
+			@media (max-width: 1333px) {
+				justify-content: flex-start;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				height: 32%;
+			}
+
+			@media (max-width: 980px) {
+				height: 20%;
+			}
+
+			@media (max-width: 780px) {
+				height: 32%;
+			}
+
+			@media (max-width: 550px) {
+				height: 25%;
+				margin-bottom: unset;
+				border-radius: unset;
+			}
+
+			@media (max-height: 440px) and (orientation: landscape) {
+				height: 25%;
+				margin-bottom: 10px;
+				border-radius: unset;
+				padding-top: unset;
+			}
 
 			span {
 				display: flex;
 				flex-direction: column;
-				margin: 0px 20px;
 				width: 100%;
 
-				&:nth-child(1) {
+				&:nth-of-type(1) {
+					width: 25%;
+
+					@media (max-width: 1333px) {
+						width: 30%;
+					}
+				}
+
+				&:nth-of-type(2) {
 					width: 50%;
+					margin: 0 30px;
+
+					@media (max-width: 1333px) {
+						width: 60%;
+						margin-right: 2%;
+					}
+
+					@media (max-width: 780px) {
+						flex: 1 0 100%;
+						margin: 20px 0;
+					}
 				}
 
 				label {
@@ -113,7 +224,6 @@ main {
 				}
 
 				input {
-					height: 25px;
 					width: 100%;
 					background-color: transparent;
 					border: none;
@@ -131,15 +241,14 @@ main {
 					&:focus + label {
 						font-family: NotoSansRegular;
 						text-transform: uppercase;
-						font-size: 11px;
+						font-size: 10px;
 					}
 				}
 			}
 
 			.button {
-				width: 50%;
 				height: 36px;
-				margin: 0 30px 20px 20px;
+				width: 25%;
 				font-family: NotoSansRegular;
 				font-size: 14px;
 				border-radius: 5px;
@@ -147,6 +256,27 @@ main {
 				background-color: $primary-btn-clr;
 				color: $secondary-txt-clr;
 				cursor: pointer;
+
+				@media (max-width: 1333px) {
+					height: 30px;
+					width: 30%;
+					margin-top: auto;
+					margin-bottom: 0;
+					margin-right: 2%;
+				}
+
+				@media (max-width: 780px) {
+					margin-right: 0;
+					margin-left: auto;
+				}
+
+				@media (max-width: 550px) {
+					margin-bottom: 20px;
+				}
+
+				@media (max-height: 440px) and (orientation: landscape) {
+					margin-top: 10px;
+				}
 
 				&:focus {
 					outline: none;
@@ -159,12 +289,28 @@ main {
 		}
 
 		table {
+			overflow-y: scroll;
 			display: flex;
 			height: 350px;
 			width: 100%;
 			padding: 20px;
 			background-color: $front-bg-clr;
-			overflow-y: scroll;
+			border-radius: 5px;
+
+			@media (max-width: 980px) {
+				height: 400px;
+			}
+
+			@media (max-width: 550px) {
+				height: 54%;
+				border-radius: unset;
+				box-shadow: 0 0 3px $table-td-shadow;
+			}
+
+			@media (max-height: 440px) and (orientation: landscape) {
+				border-radius: unset;
+				box-shadow: 0 0 3px $table-td-shadow;
+			}
 
 			&::-webkit-scrollbar-track {
 				margin: 0px;
@@ -188,7 +334,37 @@ main {
 				tr {
 					display: flex;
 					width: 100%;
-					margin-bottom: 20px;
+
+					&:last-of-type {
+						margin-bottom: 30px;
+					}
+
+					@media (min-width: 781px) {
+						& + tr {
+							margin-top: 36px;
+						}
+					}
+
+					@media (max-width: 1333px) {
+						position: relative;
+						justify-content: flex-start;
+						align-items: flex-start;
+						width: 100%;
+						margin-bottom: 30px;
+						flex-wrap: wrap;
+
+						&:last-of-type {
+							margin-bottom: 60px;
+
+							@media (max-height: 440px) and (orientation: landscape) {
+								margin-bottom: 75px;
+							}
+						}
+					}
+
+					@media (max-width: 780px) {
+						margin: unset;
+					}
 
 					td {
 						display: flex;
@@ -203,6 +379,10 @@ main {
 						&:nth-child(1) {
 							height: 36px;
 							width: 50%;
+
+							@media (max-width: 1333px) {
+								width: 30%;
+							}
 						}
 
 						&:nth-child(1),
@@ -215,12 +395,36 @@ main {
 							width: 100%;
 							margin: 0 40px;
 							padding-left: 5px;
+
+							@media (max-width: 1333px) {
+								width: 60%;
+								margin-right: unset;
+								margin-left: 30px;
+							}
+
+							@media (max-width: 780px) {
+								flex: 1 0 100%;
+								margin: 10px 0;
+							}
 						}
 
 						&:nth-child(3) {
-							display: flex;
+							align-items: flex-start;
 							justify-content: space-between;
 							width: 50%;
+
+							@media (max-width: 1333px) {
+								align-items: unset;
+								position: absolute;
+								width: 30%;
+								margin-top: 45px;
+							}
+
+							@media (max-width: 780px) {
+								position: static;
+								flex: 0 0 50%;
+								margin: 0 0 0 auto;
+							}
 						}
 
 						input {
@@ -241,6 +445,7 @@ main {
 						}
 
 						textarea {
+							block-size: 36px;
 							min-height: 36px;
 							width: 100%;
 							padding-top: 11px;
@@ -274,6 +479,10 @@ main {
 							color: $front-bg-clr;
 							text-decoration: none;
 							border-radius: 5px;
+
+							@media (max-width: 1333px) {
+								height: 30px;
+							}
 
 							&.remove {
 								background-color: $remove-btn-clr;
@@ -315,4 +524,19 @@ footer {
 	font-family: NotoSansBlack;
 	font-size: 14px;
 	letter-spacing: 2px;
+
+	@media (max-width: 780px) {
+		bottom: 30px;
+	}
+
+	@media (max-width: 550px), (max-height: 440px) and (orientation: landscape) {
+		height: 5vh;
+		width: 100%;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 0 3px $table-td-shadow;
+		background-color: $front-bg-clr;
+	}
 }

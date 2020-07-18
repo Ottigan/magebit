@@ -80,7 +80,7 @@ body {
   }
 }
 
-body main {
+main {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,7 +91,7 @@ body main {
 }
 
 @media (max-width: 640px) {
-  body main {
+  main {
     bottom: 30px;
     height: 75%;
     width: 85%;
@@ -99,7 +99,7 @@ body main {
 }
 
 @media (max-width: 550px) {
-  body main {
+  main {
     bottom: unset;
     height: 100%;
     width: 100%;
@@ -107,14 +107,14 @@ body main {
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main {
+  main {
     bottom: unset;
     height: 100%;
     width: 100%;
   }
 }
 
-body main .button {
+main .button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -134,11 +134,11 @@ body main .button {
   cursor: pointer;
 }
 
-body main .button:focus {
+main .button:focus {
   outline: none;
 }
 
-body main .container {
+main .container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,12 +153,12 @@ body main .container {
 }
 
 @media (max-width: 1333px) {
-  body main .container * {
+  main .container * {
     display: none !important;
   }
 }
 
-body main .container .sign-up-block {
+main .container .sign-up-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,12 +173,12 @@ body main .container .sign-up-block {
   margin-left: 9%;
 }
 
-body main .container .sign-up-block h2,
-body main .container .sign-up-block p {
+main .container .sign-up-block h2,
+main .container .sign-up-block p {
   max-width: 270px;
 }
 
-body main .container .login-container {
+main .container .login-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,7 +191,7 @@ body main .container .login-container {
   width: 50%;
 }
 
-body main .container .login-container .login-block {
+main .container .login-container .login-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,31 +202,31 @@ body main .container .login-container .login-block {
   width: 80%;
 }
 
-body main .container .login-container .login-block h2,
-body main .container .login-container .login-block p {
+main .container .login-container .login-block h2,
+main .container .login-container .login-block p {
   max-width: 80%;
 }
 
-body main .container h2,
-body main .container p {
+main .container h2,
+main .container p {
   color: #fff;
 }
 
-body main .container p {
+main .container p {
   font-family: NotoSansRegular;
   font-size: 0.9rem;
   line-height: 32px;
 }
 
-body main .container .button {
+main .container .button {
   border: 2px solid #49abfe;
 }
 
-body main .container .button:hover {
+main .container .button:hover {
   background-color: #49abfe;
 }
 
-body main .container .dimension-border {
+main .container .dimension-border {
   position: absolute;
   z-index: -1;
   display: -webkit-box;
@@ -244,7 +244,7 @@ body main .container .dimension-border {
   width: 10%;
 }
 
-body main .container .dimension-border .triangle {
+main .container .dimension-border .triangle {
   position: absolute;
   z-index: -2;
   left: 4px;
@@ -253,7 +253,7 @@ body main .container .dimension-border .triangle {
   background-color: #89deff;
 }
 
-body main .container .dimension-border .solid-border {
+main .container .dimension-border .solid-border {
   position: absolute;
   z-index: -1;
   height: 100%;
@@ -261,38 +261,38 @@ body main .container .dimension-border .solid-border {
   background-color: #20293a;
 }
 
-body main .container .dimension-border .top-triangle {
+main .container .dimension-border .top-triangle {
   top: -18px;
   -webkit-transform: rotate(25deg);
           transform: rotate(25deg);
 }
 
-body main .container .dimension-border .bottom-triangle {
+main .container .dimension-border .bottom-triangle {
   bottom: -18px;
   -webkit-transform: rotate(-25deg);
           transform: rotate(-25deg);
 }
 
-body main h2,
-body main span:first-of-type,
-body main p,
-body main input {
+main h2,
+main span:first-of-type,
+main p,
+main input {
   margin-bottom: 22px;
 }
 
-body main h2 {
+main h2 {
   font-family: NotoSansThin;
   font-size: 1.6rem;
 }
 
-body main .under-line {
+main .under-line {
   display: block;
   width: 40px;
   height: 2px;
   background-color: #49abfe;
 }
 
-body main .transformer-container {
+main .transformer-container {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,7 +311,7 @@ body main .transformer-container {
 }
 
 @media (max-width: 1333px) {
-  body main .transformer-container {
+  main .transformer-container {
     width: auto;
     left: 20px;
     right: 20px;
@@ -319,7 +319,7 @@ body main .transformer-container {
 }
 
 @media (max-width: 550px) {
-  body main .transformer-container {
+  main .transformer-container {
     width: auto;
     top: 0px;
     right: 0px;
@@ -329,7 +329,7 @@ body main .transformer-container {
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main .transformer-container {
+  main .transformer-container {
     width: auto;
     top: 0px;
     right: 0px;
@@ -338,7 +338,7 @@ body main .transformer-container {
   }
 }
 
-body main .transformer-container .form-container {
+main .transformer-container .form-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -352,7 +352,7 @@ body main .transformer-container .form-container {
   width: 100%;
 }
 
-body main .transformer-container .form-container .inner-form-container {
+main .transformer-container .form-container .inner-form-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,20 +367,20 @@ body main .transformer-container .form-container .inner-form-container {
 }
 
 @media (max-width: 450px) {
-  body main .transformer-container .form-container .inner-form-container {
+  main .transformer-container .form-container .inner-form-container {
     height: 50%;
     width: 80%;
   }
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main .transformer-container .form-container .inner-form-container {
+  main .transformer-container .form-container .inner-form-container {
     position: relative;
     top: -15px;
   }
 }
 
-body main .transformer-container .form-container .inner-form-container header {
+main .transformer-container .form-container .inner-form-container header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,7 +391,7 @@ body main .transformer-container .form-container .inner-form-container header {
   width: 100%;
 }
 
-body main .transformer-container .form-container .inner-form-container header div {
+main .transformer-container .form-container .inner-form-container header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,28 +403,28 @@ body main .transformer-container .form-container .inner-form-container header di
           align-items: flex-start;
 }
 
-body main .transformer-container .form-container .inner-form-container header div h2 {
+main .transformer-container .form-container .inner-form-container header div h2 {
   color: #3e495e;
 }
 
-body main .transformer-container .form-container .inner-form-container header div img {
+main .transformer-container .form-container .inner-form-container header div img {
   height: 30px;
   width: auto;
 }
 
-body main .transformer-container .form-container .inner-form-container .error-msg {
+main .transformer-container .form-container .inner-form-container .error-msg {
   font-family: NotoSansMedium;
   font-size: 14px;
   color: #e04f4f;
 }
 
-body main .transformer-container .form-container .inner-form-container .success-msg {
+main .transformer-container .form-container .inner-form-container .success-msg {
   font-family: NotoSansMedium;
   font-size: 14px;
   color: #36ca56;
 }
 
-body main .transformer-container .form-container .inner-form-container form {
+main .transformer-container .form-container .inner-form-container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,13 +442,13 @@ body main .transformer-container .form-container .inner-form-container form {
   height: 100%;
 }
 
-body main .transformer-container .form-container .inner-form-container form div {
+main .transformer-container .form-container .inner-form-container form div {
   width: 100%;
 }
 
-body main .transformer-container .form-container .inner-form-container form .name-input-container,
-body main .transformer-container .form-container .inner-form-container form .email-input-container,
-body main .transformer-container .form-container .inner-form-container form .password-input-container {
+main .transformer-container .form-container .inner-form-container form .name-input-container,
+main .transformer-container .form-container .inner-form-container form .email-input-container,
+main .transformer-container .form-container .inner-form-container form .password-input-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,18 +460,18 @@ body main .transformer-container .form-container .inner-form-container form .pas
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main .transformer-container .form-container .inner-form-container form .name-input-container,
-  body main .transformer-container .form-container .inner-form-container form .email-input-container,
-  body main .transformer-container .form-container .inner-form-container form .password-input-container {
+  main .transformer-container .form-container .inner-form-container form .name-input-container,
+  main .transformer-container .form-container .inner-form-container form .email-input-container,
+  main .transformer-container .form-container .inner-form-container form .password-input-container {
     margin-bottom: 10px;
   }
 }
 
-body main .transformer-container .form-container .inner-form-container form .name-input-container {
+main .transformer-container .form-container .inner-form-container form .name-input-container {
   display: none;
 }
 
-body main .transformer-container .form-container .inner-form-container form .input-container {
+main .transformer-container .form-container .inner-form-container form .input-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -485,13 +485,13 @@ body main .transformer-container .form-container .inner-form-container form .inp
   width: 100%;
 }
 
-body main .transformer-container .form-container .inner-form-container form .input-container label::after {
+main .transformer-container .form-container .inner-form-container form .input-container label::after {
   content: '*';
   color: #f44368;
   font-size: 14px;
 }
 
-body main .transformer-container .form-container .inner-form-container form .input-container img {
+main .transformer-container .form-container .inner-form-container form .input-container img {
   position: absolute;
   bottom: -2px;
   right: 0;
@@ -499,7 +499,7 @@ body main .transformer-container .form-container .inner-form-container form .inp
   width: 16px;
 }
 
-body main .transformer-container .form-container .inner-form-container form input {
+main .transformer-container .form-container .inner-form-container form input {
   height: 25px;
   width: 100%;
   margin: 0px;
@@ -517,25 +517,25 @@ body main .transformer-container .form-container .inner-form-container form inpu
 							||||||||||||||||||||||||||||||||||*/
 }
 
-body main .transformer-container .form-container .inner-form-container form input:focus {
+main .transformer-container .form-container .inner-form-container form input:focus {
   outline: none;
   padding-bottom: 5px;
 }
 
-body main .transformer-container .form-container .inner-form-container form input:focus + div label {
+main .transformer-container .form-container .inner-form-container form input:focus + div label {
   font-family: NotoSansRegular;
   text-transform: uppercase;
   font-size: 11px;
 }
 
-body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, body main .transformer-container .form-container .inner-form-container form input:-webkit-autofill::first-line {
+main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:hover, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill:focus, main .transformer-container .form-container .inner-form-container form input:-webkit-autofill::first-line {
   font-family: NotoSansMedium;
   font-size: 14px;
   -webkit-box-shadow: 0 0 0px 1000px white inset;
           box-shadow: 0 0 0px 1000px white inset;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container {
+main .transformer-container .form-container .inner-form-container form .main-button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -549,37 +549,37 @@ body main .transformer-container .form-container .inner-form-container form .mai
 }
 
 @media (max-width: 980px) {
-  body main .transformer-container .form-container .inner-form-container form .main-button-container {
+  main .transformer-container .form-container .inner-form-container form .main-button-container {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main .transformer-container .form-container .inner-form-container form .main-button-container {
+  main .transformer-container .form-container .inner-form-container form .main-button-container {
     margin-top: unset;
   }
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button {
   background-color: #f89a35;
   border: none;
   text-align: center;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
   display: none;
   margin-bottom: 0px;
 }
 
 @media (max-width: 1333px) {
-  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+  main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
     display: block;
   }
 }
 
 @media (max-width: 980px) {
-  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+  main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -588,7 +588,7 @@ body main .transformer-container .form-container .inner-form-container form .mai
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
+  main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-login, main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-sign-up {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -596,43 +596,43 @@ body main .transformer-container .form-container .inner-form-container form .mai
   }
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-btn {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.hidden-btn {
   display: none;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn {
   background-color: #49abfe;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn:hover {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-sign-up-btn:hover {
   background-color: #186eb9;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn {
   background-color: #49abfe;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn:hover {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button.fake-login-btn:hover {
   background-color: #186eb9;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button:focus {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button:focus {
   outline: none;
 }
 
-body main .transformer-container .form-container .inner-form-container form .main-button-container .button:hover {
+main .transformer-container .form-container .inner-form-container form .main-button-container .button:hover {
   background-color: #f8bf35;
 }
 
-body main .transformer-container .form-container .inner-form-container form label,
-body main .transformer-container .form-container .inner-form-container form p {
+main .transformer-container .form-container .inner-form-container form label,
+main .transformer-container .form-container .inner-form-container form p {
   margin: 0px;
   font-family: NotoSansRegular;
   font-size: 14px;
   color: #8495b7;
 }
 
-body footer {
+footer {
   position: absolute;
   bottom: 50px;
   color: #a7b3cb;
@@ -643,7 +643,7 @@ body footer {
 }
 
 @media (max-height: 440px) and (orientation: landscape) {
-  body footer {
+  footer {
     bottom: 20px;
   }
 }

@@ -11,7 +11,7 @@ let editAttribute = function (event) {
 			targetAttribute = document.getElementById(`attribute-${targetID}`),
 			targetAttribValue = document.getElementById(`attribValue-${targetID}`);
 
-		targetAttribute.innerHTML = `<input class="updateAttribute-${targetID}" name="attribute" value="${targetAttribute.innerHTML}" />`;
+		targetAttribute.innerHTML = `<input class="updateAttribute-${targetID}" name="attribute" maxlength="18" value="${targetAttribute.innerHTML}" />`;
 		targetAttribute.style.paddingLeft = '0px';
 		targetAttribValue.innerHTML = `<textarea class="updateAttribValue-${targetID}" name="attribValue">${targetAttribValue.innerHTML}</textarea>`;
 		targetAttribValue.style.paddingLeft = '0px';
