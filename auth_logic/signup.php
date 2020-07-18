@@ -38,10 +38,6 @@ if (isset($_POST['sign-up-btn'])) {
             mysqli_stmt_store_result($stmt);
             $resultCheck = mysqli_stmt_num_rows($stmt);
 
-            // Closing previous $stmt to avoid unexpected outcomes
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-
             // If user with the provided email exists return an error
             if ($resultCheck > 0) {
                 header('location: ../index.php?error=emailtaken&name=' . $name . '&email=' . $email);
