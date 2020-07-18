@@ -1,4 +1,4 @@
-# MAGEBIT Test Project
+# Magebit Test Project
 
 1. Project entails authentication system with ability to Sign Up and Login
 2. Profile page accessible only by logged in users
