@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2020 at 08:23 AM
+-- Generation Time: Jul 18, 2020 at 08:25 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -39,10 +39,10 @@ CREATE TABLE `attributes` (
 --
 
 INSERT INTO `attributes` (`attribute`, `attribValue`, `user`, `id`) VALUES
-('Height', '191cm', 1, 56),
-('Facial Hair', 'Yes!', 1, 64),
-('Pet Owner', 'True', 1, 74),
-('Hobbies', 'Programming, Learning, Gaming, Anime and Exercising', 1, 87);
+('Height', '191cm', 1, 1),
+('Facial Hair', 'Yes!', 1, 2),
+('Pet Owner', 'True', 1, 3),
+('Hobbies', 'Programming, Learning, Gaming, Anime and Exercising', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -88,13 +88,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attributes`
 --
 ALTER TABLE `attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

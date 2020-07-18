@@ -56,6 +56,7 @@ main {
 		bottom: unset;
 		height: 100%;
 		width: 100%;
+		align-items: flex-start;
 	}
 
 	@media (max-height: 440px) and (orientation: landscape) {
@@ -223,15 +224,8 @@ main {
 			right: 20px;
 		}
 
-		@media (max-width: 550px) {
-			width: auto;
-			top: 0px;
-			right: 0px;
-			bottom: 0px;
-			left: 0px;
-		}
-
-		@media (max-height: 440px) and (orientation: landscape) {
+		@media (max-width: 550px),
+			(max-height: 440px) and (orientation: landscape) {
 			width: auto;
 			top: 0px;
 			right: 0px;
@@ -252,8 +246,15 @@ main {
 				align-items: center;
 				width: 60%;
 
+				@media (max-width: 550px) {
+					justify-content: center;
+					height: 100%;
+					width: 80%;
+				}
+
 				@media (max-width: 450px) {
-					height: 50%;
+					justify-content: space-around;
+					height: 60%;
 					width: 80%;
 				}
 
@@ -302,6 +303,10 @@ main {
 					align-items: center;
 					width: 100%;
 					height: 100%;
+
+					@media (max-width: 550px) {
+						height: auto;
+					}
 
 					div {
 						width: 100%;
@@ -407,6 +412,10 @@ main {
 							border: none;
 							text-align: center;
 
+							@media (max-height: 440px) and (orientation: landscape) {
+								margin-top: 10px;
+							}
+
 							&.hidden-login,
 							&.hidden-sign-up {
 								display: none;
@@ -421,9 +430,19 @@ main {
 									margin: 25px 60px 0 0;
 								}
 
+								@media (max-width: 550px) {
+									margin: unset;
+								}
+
+								@media (max-width: 450px) {
+									margin-top: 15px;
+									margin-right: 20px;
+								}
+
 								@media (max-height: 440px) and (orientation: landscape) {
 									order: 1;
 									margin: unset;
+									margin-top: 10px;
 								}
 							}
 
@@ -478,6 +497,14 @@ footer {
 	font-size: 14px;
 	letter-spacing: 2px;
 	text-align: center;
+
+	@media (max-width: 450px) {
+		bottom: 5px;
+		height: 5vh;
+		font-size: 12px;
+		display: flex;
+		align-items: center;
+	}
 
 	@media (max-height: 440px) and (orientation: landscape) {
 		bottom: 20px;

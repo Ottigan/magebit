@@ -6,7 +6,7 @@ const mainContainer = document.querySelector('main'),
 	dimensionBorder = document.querySelector('.dimension-border'),
 	formContainer = document.querySelector('.inner-form-container'),
 	transformerH2 = document.querySelector('.transformer-h2'),
-	form = document.querySelector('.transformer-from'),
+	form = document.querySelector('.transformer-form'),
 	nameContainer = document.querySelector('.name-input-container'),
 	nameIcon = document.getElementById('name-icon'),
 	nameInput = document.getElementById('name'),
@@ -16,6 +16,7 @@ const mainContainer = document.querySelector('main'),
 	passwordInput = document.getElementById('password'),
 	hiddenSignUp = document.querySelector('.hidden-sign-up'),
 	hiddenLogin = document.querySelector('.hidden-login'),
+	errorMsg = document.querySelector('.error-msg'),
 	url = document.URL;
 
 // Applying values to input elements
@@ -27,10 +28,14 @@ if (url.includes('signup=success') || url.includes('noaccount')) {
 } else if (url.includes('wrongpwd')) {
 	passwordInput.focus();
 } else if (url.includes('index.php?')) {
-	dimensionBorder.style.cssText = 'transform: translateX(-411px);';
-	movingPanel.style.cssText = 'transform: translateX(-411px);';
+	// Adjust panel to LEFT qfter failed Sign Up according to screen width
+	if (screen.width > 1333) {
+		dimensionBorder.style.cssText = 'transform: translateX(-449%)';
+		movingPanel.style.cssText = 'transform: translateX(-88%)';
+	}
+
 	form.action = 'auth_logic/signup.php';
-	nameContainer.style.cssText = 'display:block;';
+	nameContainer.style.cssText = 'display:flex;';
 	if (url.includes('name=')) {
 		nameInput.value = url.substring(
 			url.indexOf('name=') + 5,
@@ -44,7 +49,7 @@ if (url.includes('signup=success') || url.includes('noaccount')) {
 
 	mainButton.innerHTML = 'SIGN UP';
 	mainButton.name = 'sign-up-btn';
-	formContainer.style.cssText = 'margin-top: 65px';
+	formContainer.style.cssText = 'margin-top: 20px';
 }
 
 // Transforming all the parameters for the moving panel
@@ -57,6 +62,7 @@ mainContainer.addEventListener('click', event => {
 			formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
 			setTimeout(() => {
 				transformerH2.innerHTML = 'Sign Up';
+				errorMsg ? errorMsg.remove() : '';
 				form.action = 'auth_logic/signup.php';
 				nameInput.setAttribute('required', 'true');
 				nameContainer.style.cssText =
@@ -76,6 +82,7 @@ mainContainer.addEventListener('click', event => {
 			formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
 			setTimeout(() => {
 				transformerH2.innerHTML = 'Sign Up';
+				errorMsg ? errorMsg.remove() : '';
 				form.action = 'auth_logic/signup.php';
 				nameInput.setAttribute('required', 'true');
 				nameContainer.style.cssText =
@@ -95,6 +102,7 @@ mainContainer.addEventListener('click', event => {
 
 			setTimeout(() => {
 				transformerH2.innerHTML = 'Login';
+				errorMsg ? errorMsg.remove() : '';
 				form.action = 'auth_logic/login.php';
 				nameInput.removeAttribute('required');
 				nameContainer.style.cssText =
@@ -116,6 +124,7 @@ mainContainer.addEventListener('click', event => {
 
 			setTimeout(() => {
 				transformerH2.innerHTML = 'Login';
+				errorMsg ? errorMsg.remove() : '';
 				form.action = 'auth_logic/login.php';
 				nameInput.removeAttribute('required');
 				nameContainer.style.cssText =

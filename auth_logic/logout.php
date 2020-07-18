@@ -1,5 +1,6 @@
 <?php
 
+// Terminating current session
 session_start();
 session_unset();
 session_destroy();

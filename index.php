@@ -39,6 +39,11 @@ session_start()
 					</button>
 				</div>
 			</div>
+			<!-- Border providing dimensions -->
+			<!-- Why is it here? And not together with "transformer-container?" -->
+			<!-- Due to chosen structure of HTML, there were issues -->
+			<!-- Specifically with STACKING CONTEXT during CSS TRANSFORM -->
+			<!-- Border would go on top of the text (breaking perspective) -->
 			<div class="dimension-border">
 				<div class="top-triangle triangle"></div>
 				<div class="solid-border"></div>
@@ -46,6 +51,7 @@ session_start()
 			</div>
 		</div>
 
+		<!-- The moving panel which visually wraps around the base layer -->
 		<div class="transformer-container">
 			<div class="form-container">
 				<div class="inner-form-container">
@@ -56,6 +62,7 @@ session_start()
 						</div>
 						<span class="under-line"></span>
 					</header>
+					<!-- Generating various error messages and one success message which are based on the AUTH_LOGIC outcome -->
 					<?php
 					if (isset($_GET['error'])) {
 						if ($_GET['error'] == 'emptyfields') {
@@ -73,13 +80,15 @@ session_start()
 						} else if ($_GET['error'] == 'invalidname') {
 							echo  '<p class="error-msg">Invalid name format!</p>';
 						} else if ($_GET['error'] == 'emailtaken') {
-							echo  '<p class="error-msg">Invalid name format!</p>';
+							echo  '<p class="error-msg">Email taken!</p>';
 						}
 					} else if (isset($_GET['signup']) && $_GET['signup'] == 'success') {
 						echo  '<p class="success-msg">Success!</p>';
 					}
 					?>
-					<form class="transformer-from" action="auth_logic/login.php" method="POST">
+
+					<!-- Login / Sign Up, which transforms based on users decision with the help of scripts found in app.js -->
+					<form class="transformer-form" action="auth_logic/login.php" method="POST">
 						<div class="name-input-container">
 							<input id="name" type="text" name="name" pattern="[A-Za-z ]+" autocomplete="off" />
 							<div class="input-container">
@@ -105,6 +114,8 @@ session_start()
 							<button class="button main-button" type="submit" name="login-btn">
 								LOGIN
 							</button>
+
+							<!-- Hidden buttons which become visible with lower screen widths -->
 							<button class="fake-sign-up-btn button hidden-sign-up" type="button">
 								SIGN UP
 							</button>
@@ -118,6 +129,8 @@ session_start()
 			</div>
 		</div>
 	</main>
+
+	<!-- Disclaimer -->
 	<footer>
 		<h5>ALL RIGHTS RESERVED "MAGEBIT" 2016.</h5>
 	</footer>

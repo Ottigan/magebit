@@ -1,4 +1,6 @@
 <?php
+// Limiting access to logged in users by fetching 
+// the global $_SESSION variable
 session_start();
 if (!isset($_SESSION['id'])) {
     header('location: index.php');
@@ -55,7 +57,7 @@ if (!isset($_SESSION['id'])) {
         }
     }
 
-    // Fetch all the current Characteristics for the currently logged in USER
+    // Fetch all the current Attributes for the currently logged in USER
     $stmt = mysqli_stmt_init($conn);
     $sql = 'SELECT * FROM attributes WHERE user = ?';
     $attributes;
@@ -82,13 +84,14 @@ if (!isset($_SESSION['id'])) {
 
 <body>
     <header>
+        <!-- Correctly ending users SESSION -->
         <form action="auth_logic/logout.php" method="POST">
             <button class="log-out-btn button" type="submit">Log Out</button>
         </form>
     </header>
-
     <main class="main-container">
         <div class="dark-container">
+            <!-- Personalizwed header based on currentyl logged in users chosen name -->
             <?php
             echo "<h1>About $_SESSION[name]</h1>";
             ?>
@@ -121,6 +124,8 @@ if (!isset($_SESSION['id'])) {
             </table>
         </div>
     </main>
+
+    <!-- Disclaimer  -->
     <footer>
         <h5>ALL RIGHTS RESERVED "MAGEBIT" 2016.</h5>
     </footer>
