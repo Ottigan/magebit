@@ -62,7 +62,7 @@ session_start()
 						</div>
 						<span class="under-line"></span>
 					</header>
-					<!-- Generating various error messages and one success message which are based on the AUTH_LOGIC outcome -->
+					<!-- Generating various error messages and one success message, which are based on the AUTH_LOGIC outcome -->
 					<?php
 					if (isset($_GET['error'])) {
 						if ($_GET['error'] == 'emptyfields') {
@@ -87,7 +87,7 @@ session_start()
 					}
 					?>
 
-					<!-- Login / Sign Up, which transforms based on users decision with the help of scripts found in app.js -->
+					<!-- Login / Sign Up, which transforms based on user decision with the help of scripts found in app.js -->
 					<form class="transformer-form" action="auth_logic/login.php" method="POST">
 						<div class="name-input-container">
 							<input id="name" type="text" name="name" pattern="[A-Za-z ]+" autocomplete="off" />

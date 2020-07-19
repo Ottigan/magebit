@@ -8,6 +8,8 @@
 
 Development environment used in the project can be downloaded [HERE](https://www.apachefriends.org/index.html)
 
+Database Name required for import: magebit
+
 Server:
 
 ```bash

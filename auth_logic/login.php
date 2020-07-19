@@ -24,10 +24,6 @@ if (isset($_POST['login-btn'])) {
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
-            // Closing previous $stmt to avoid unexpected outcomes
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-
             // If user (eamail) exist in the DB, continue validation
             if ($row = mysqli_fetch_assoc($result)) {
                 $pwdCheck = password_verify($pwd, $row['pwdUsers']);

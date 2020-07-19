@@ -7,9 +7,11 @@
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE
+= "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone
+= "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -27,18 +29,24 @@ SET time_zone = "+00:00";
 -- Table structure for table `attributes`
 --
 
-CREATE TABLE `attributes` (
+CREATE TABLE `attributes`
+(
   `attribute` text NOT NULL,
   `attribValue` text NOT NULL,
-  `user` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `user` int
+(11) NOT NULL,
+  `id` int
+(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `attributes`
 --
 
-INSERT INTO `attributes` (`attribute`, `attribValue`, `user`, `id`) VALUES
+INSERT INTO `attributes` (`
+attribute`,
+`attribValue
+`, `user`, `id`) VALUES
 ('Height', '191cm', 1, 1),
 ('Facial Hair', 'Yes!', 1, 2),
 ('Pet Owner', 'True', 1, 3),
@@ -50,8 +58,10 @@ INSERT INTO `attributes` (`attribute`, `attribValue`, `user`, `id`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `idUsers` int(11) NOT NULL,
+CREATE TABLE `users`
+(
+  `idUsers` int
+(11) NOT NULL,
   `nameUsers` tinytext NOT NULL,
   `emailUsers` tinytext NOT NULL,
   `pwdUsers` longtext NOT NULL
@@ -61,7 +71,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`idUsers`, `nameUsers`, `emailUsers`, `pwdUsers`) VALUES
+INSERT INTO `users` (`
+idUsers`,
+`nameUsers
+`, `emailUsers`, `pwdUsers`) VALUES
 (1, 'Janis', 'jmalcans91@gmail.com', '$2y$10$U1dk8pPAC21GB2qzXEYuX.XRwT5EkBVj.cdVU9mPqRacTKNysMQSW');
 
 --
@@ -72,13 +85,15 @@ INSERT INTO `users` (`idUsers`, `nameUsers`, `emailUsers`, `pwdUsers`) VALUES
 -- Indexes for table `attributes`
 --
 ALTER TABLE `attributes`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY
+(`id`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`idUsers`);
+ADD PRIMARY KEY
+(`idUsers`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -88,13 +103,15 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attributes`
 --
 ALTER TABLE `attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int
+(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsers` int
+(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
