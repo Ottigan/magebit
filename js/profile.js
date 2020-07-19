@@ -29,7 +29,7 @@ let editAttribute = function (event) {
 				`.updateAttribValue-${targetID}`
 			);
 
-		target.href = `profile.php?edit=${targetID}&attribute=${attributeInput.value}&attribValue=${attribValueInput.value}`;
+		target.href = `profile_logic/edit_attrib.php?edit=${targetID}&attribute=${attributeInput.value}&attribValue=${attribValueInput.value}`;
 	}
 };
 

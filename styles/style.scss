@@ -22,6 +22,10 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 
+	@media (max-width: 1333px) {
+		background-size: 130%;
+	}
+
 	@media (min-width: 1333px) {
 		animation: bg-image 5s linear infinite alternate;
 
@@ -37,6 +41,19 @@ body {
 			}
 		}
 	}
+
+	@media (max-width: 980px) {
+		background-size: 200%;
+	}
+
+	@media (max-width: 680px) {
+		background-size: 250%;
+	}
+
+	@media (max-height: 440px) and (orientation: landscape) {
+		background-image: none;
+		background-color: $front-bg-clr;
+	}
 }
 
 main {
@@ -46,9 +63,18 @@ main {
 	min-height: 46%;
 	width: 67%;
 
-	@media (max-width: 640px) {
+	@media (max-width: 1333px) {
+		height: 50%;
+		width: 50%;
 		bottom: 30px;
+	}
+
+	@media (max-width: 980px) {
 		height: 75%;
+		width: 65%;
+	}
+
+	@media (max-width: 680px) {
 		width: 85%;
 	}
 
@@ -178,11 +204,19 @@ main {
 			.top-triangle {
 				top: -18px;
 				transform: rotate(25deg);
+
+				@media (max-width: 1600px) {
+					transform: rotate(18deg);
+				}
 			}
 
 			.bottom-triangle {
 				bottom: -18px;
 				transform: rotate(-25deg);
+
+				@media (max-width: 1600px) {
+					transform: rotate(-18deg);
+				}
 			}
 		}
 	}
@@ -192,6 +226,16 @@ main {
 	p,
 	input {
 		margin-bottom: 22px;
+
+		@media (min-width: 1333px),
+			(max-height: 440px) and (orientation: landscape) {
+			&.error-msg {
+				position: relative;
+				bottom: 8px;
+				margin: 0;
+				line-height: 1;
+			}
+		}
 	}
 
 	h2 {
@@ -216,7 +260,7 @@ main {
 		height: auto;
 		width: 51%;
 		background-color: $front-bg-clr;
-		box-shadow: 0 0 2px rgb(207, 207, 207);
+		box-shadow: 0 0 2px rgb(190, 190, 190);
 
 		@media (max-width: 1333px) {
 			width: auto;
@@ -250,17 +294,16 @@ main {
 					justify-content: center;
 					height: 100%;
 					width: 80%;
-				}
-
-				@media (max-width: 450px) {
-					justify-content: space-around;
-					height: 60%;
-					width: 80%;
+					margin-top: -100px;
 				}
 
 				@media (max-height: 440px) and (orientation: landscape) {
 					position: relative;
 					top: -15px;
+				}
+
+				@media (max-height: 330px) and (orientation: landscape) {
+					top: 0px;
 				}
 
 				header {
@@ -280,6 +323,12 @@ main {
 						img {
 							height: 30px;
 							width: auto;
+						}
+
+						@media (max-width: 550px) {
+							span {
+								margin-bottom: 22px;
+							}
 						}
 					}
 				}
@@ -320,6 +369,12 @@ main {
 						margin-bottom: 25px;
 
 						@media (max-height: 440px) and (orientation: landscape) {
+							margin-bottom: 10px;
+						}
+					}
+
+					@media (max-width: 550px) {
+						.password-input-container {
 							margin-bottom: 10px;
 						}
 					}
@@ -397,7 +452,6 @@ main {
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
-						margin-top: 8px;
 
 						@media (max-width: 980px) {
 							flex-wrap: wrap;
@@ -407,13 +461,27 @@ main {
 							margin-top: unset;
 						}
 
+						@media (max-height: 330px) and (orientation: landscape) {
+							margin-bottom: 10px;
+						}
+
 						.button {
 							background-color: $primary-btn-clr;
 							border: none;
 							text-align: center;
 
+							@media (max-width: 1333px) {
+								height: 40px;
+								width: 120px;
+							}
+
 							@media (max-height: 440px) and (orientation: landscape) {
-								margin-top: 10px;
+								height: 40px;
+								width: 100px;
+							}
+
+							@media (max-height: 330px) and (orientation: landscape) {
+								height: 35px;
 							}
 
 							&.hidden-login,
@@ -423,26 +491,19 @@ main {
 
 								@media (max-width: 1333px) {
 									display: block;
+									order: 1;
 								}
 
 								@media (max-width: 980px) {
-									order: 1;
-									margin: 25px 60px 0 0;
 								}
 
 								@media (max-width: 550px) {
 									margin: unset;
 								}
 
-								@media (max-width: 450px) {
-									margin-top: 15px;
-									margin-right: 20px;
-								}
-
 								@media (max-height: 440px) and (orientation: landscape) {
 									order: 1;
 									margin: unset;
-									margin-top: 10px;
 								}
 							}
 
@@ -483,6 +544,14 @@ main {
 						font-size: 14px;
 						color: $label-txt-clr;
 					}
+
+					p {
+						margin: 20px;
+
+						@media (max-height: 330px) and (orientation: landscape) {
+							margin: unset;
+						}
+					}
 				}
 			}
 		}
@@ -507,6 +576,11 @@ footer {
 	}
 
 	@media (max-height: 440px) and (orientation: landscape) {
-		bottom: 20px;
+		bottom: 10px;
+		font-size: 12px;
+	}
+
+	@media (max-height: 370px) and (orientation: landscape) {
+		display: none;
 	}
 }

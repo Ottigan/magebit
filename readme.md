@@ -8,7 +8,7 @@
 
 Development environment used in the project can be downloaded [HERE](https://www.apachefriends.org/index.html)
 
-Database Name required for import: magebit
+Path to DB can be adjusted in: ./auth_logic/db.php
 
 Server:
 

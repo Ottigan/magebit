@@ -21,7 +21,7 @@ if (isset($_POST['sign-up-btn'])) {
         header('location: ../index.php?error=invalidemail&name=' . $name);
         exit();
         // Error if name has incorrect format
-    } else if (!preg_match('/^[a-zA-Z0-9]*$/', $name)) {
+    } else if (!preg_match('/^[a-zA-Z0-9 ]*$/', $name)) {
         header('location: ../index.php?error=invalidname&email=' . $email);
         exit();
     } else {

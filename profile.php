@@ -8,55 +8,6 @@ if (!isset($_SESSION['id'])) {
 } else {
     require 'auth_logic/db.php';
 
-    // Add new Characteristics to DB
-    if (isset($_GET['add-attribute-btn']) && !empty($_GET['attribute']) && !empty($_GET['value'])) {
-        $user = $_SESSION['id'];
-        $attribute = $_GET['attribute'];
-        $value = $_GET['value'];
-        $stmt = mysqli_stmt_init($conn);
-        $sql = "INSERT INTO attributes (attribute, attribValue, user)
-             VALUES (?, ?, ?)";
-
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header('location: profile.php');
-        } else {
-            mysqli_stmt_bind_param($stmt, 'ssi', $attribute, $value, $user);
-            mysqli_stmt_execute($stmt);
-            header('location: profile.php');
-        }
-    }
-
-    // Remove item
-    if (isset($_GET['remove'])) {
-        $id = $_GET['remove'];
-        $stmt = mysqli_stmt_init($conn);
-        $sql = "DELETE FROM attributes WHERE id = ?";
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header('location: profile.php');
-        } else {
-            mysqli_stmt_bind_param($stmt, 'i', $id);
-            mysqli_stmt_execute($stmt);
-            header('location: profile.php');
-        }
-    }
-
-    // Edit/Save item
-    if (isset($_GET['edit'])) {
-        $id = $_GET['edit'];
-        $attribute = $_GET['attribute'];
-        $value = $_GET['attribValue'];
-        $stmt = mysqli_stmt_init($conn);
-        $sql = 'UPDATE attributes SET attribute = ?, attribValue = ? WHERE id = ?';
-
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header('location: profile.php');
-        } else {
-            mysqli_stmt_bind_param($stmt, 'ssi', $attribute,  $value, $id);
-            mysqli_stmt_execute($stmt);
-            header('location: profile.php');
-        }
-    }
-
     // Fetch all the current Attributes for the currently logged in USER
     $stmt = mysqli_stmt_init($conn);
     $sql = 'SELECT * FROM attributes WHERE user = ?';
@@ -96,9 +47,9 @@ if (!isset($_SESSION['id'])) {
             echo "<h1>About $_SESSION[name]</h1>";
             ?>
             <span class="under-line"></span>
-            <form class="add-attribute-form" action="profile.php" method="GET">
+            <form class="add-attribute-form" action="profile_logic/add_attrib.php" method="GET">
                 <span>
-                    <input id="input-attribute" type='text' name='attribute' maxlength="18" autocomplete="off" required>
+                    <input id="input-attribute" type='text' name='attribute' maxlength="20" autocomplete="off" required>
                     <label for="input-attribute">Characteristic</label>
                 </span>
                 <span>
@@ -116,7 +67,7 @@ if (!isset($_SESSION['id'])) {
                             <?php echo "<td id='attribValue-$row[id]'>$row[attribValue]</td>" ?>
                             <td>
                                 <a <?php echo "id='$row[id]' class='edit' href='#'" ?>>Edit</a>
-                                <a <?php echo "class='remove' href='profile.php?remove=$row[id];'" ?>>Remove</a>
+                                <a <?php echo "class='remove' href='profile_logic/remove_attrib.php?remove=$row[id];'" ?>>Remove</a>
                             </td>
                         </tr>
                     <?php } ?>
