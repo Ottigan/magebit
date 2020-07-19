@@ -76,7 +76,7 @@ mainContainer.addEventListener('click', event => {
 			}, 500);
 		} else {
 			dimensionBorder.style.cssText =
-				'transform: translateX(-450%); transition: all linear 1s';
+				'transform: translateX(-449%); transition: all linear 1s';
 			movingPanel.style.cssText =
 				'transform: translateX(-88%); transition: all linear 1s';
 			formContainer.style.cssText = 'opacity: 0; transition: all linear 0.5s';
